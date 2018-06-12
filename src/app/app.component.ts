@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
     <mat-progress-bar 
       color="waring" 
       mode="indeterminate" 
-      style="position: fixed; z-index: 9999" *ngIf="showStatus | async">
+      style="position: fixed; z-index: 9999" *ngIf="showLoading">
     </mat-progress-bar>
     <navbar 
       class="mat-typography" 
@@ -22,24 +22,15 @@ import { Observable } from "rxjs";
   styles: []
 })
 export class AppComponent {
-  title = "Application Title";
+  title = "TeraData Studio";
   menuList: any[] = [];
   sessionUser: any = {};
-  showStatus: Observable<Boolean> = new Observable<Boolean>();
+  showLoading: Boolean;
   constructor() {
     this.menuList = this.getUserMenuList();
   }
   outputEvent($event: any) {
     console.log($event);
-
-    let isShow = true;
-    // setInterval(() => {
-    //   //this.showStatus.emit(isShow);
-    //   this.showStatus.subscribe( next( data)  {
-    //   //   isShow = !isShow;
-
-    //   })
-    // }, 1000);
   }
 
   getUserMenuList() {

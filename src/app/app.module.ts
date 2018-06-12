@@ -7,6 +7,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MaterialModule } from "./material.module";
+import { SharedModule } from "./shared/shared.module";
 import { WelcomeModule } from "./modules/welcome/welcome.module";
 
 const routes: Routes = [];
@@ -19,7 +20,7 @@ const routes: Routes = [];
     FlexLayoutModule,
     RouterModule.forRoot(routes),
     MaterialModule,
-
+    SharedModule,
     WelcomeModule
   ],
   providers: [],

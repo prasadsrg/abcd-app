@@ -4,6 +4,7 @@ import { Component, OnInit } from "@angular/core";
   selector: "app-welcome-page",
   template: `
     <mat-toolbar color="accent"> <span> Welcome Page </span> </mat-toolbar>
+    <app-welcome-news></app-welcome-news>
   `,
   styles: []
 })
