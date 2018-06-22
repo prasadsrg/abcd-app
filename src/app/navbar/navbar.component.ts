@@ -31,7 +31,7 @@ import { Observable } from "rxjs";
           </ng-template>
         </mat-nav-list>
       </mat-sidenav>
-      <mat-sidenav-content>
+      <mat-sidenav-content style="overflow: hidden !important;">
         <mat-toolbar color="primary" *ngIf="sessionUser">
           <button
             type="button"
@@ -52,10 +52,18 @@ import { Observable } from "rxjs";
       .sidenav-container {
         height: 100%;
       }
+      .mat-toolbar {
+        box-shadow: 0 2px 5px 0 hsla(240, 3%, 85%, 0.7);
+        transform: translateZ(0);
+        z-index: 99;
+      }
 
       .sidenav {
         width: 180px;
         box-shadow: 1px 0 1px rgba(0, 0, 0, 0.24);
+      }
+      .mat-list-item {
+        height: 35px !important;
       }
     `
   ]

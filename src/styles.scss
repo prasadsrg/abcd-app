@@ -1,7 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
 
+html,
 body {
   margin: 0;
-  font-weight: 300px !important;
+  font-weight: 300 !important;
+  overflow: hidden !important;
+  height: 100%;
+  width: 100%;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  min-width: 350px;
+  background: #efefef;
 }
+
+aside {
+  height: calc(100% - 95px);
+  head {
+    display: block;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    z-index: 9;
+  }
+  main {
+    overflow: auto;
+    height: 100%;
+    &.gap {
+      padding: 16px 8px;
+    }
+  }
+  main::-webkit-scrollbar {
+    width: 5px; // manage scrollbar width here
+  }
+  main::-webkit-scrollbar * {
+    background: transparent; // manage scrollbar background color here
+  }
+  main::-webkit-scrollbar-thumb {
+    background: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ) !important; // manage scrollbar thumb background color here
+  }
+}
+
 @import "styles/md";
