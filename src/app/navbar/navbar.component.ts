@@ -12,7 +12,7 @@ import { Observable } from "rxjs";
     <mat-sidenav-container class="sidenav-container" >
       <mat-sidenav 
         #drawer
-        class="sidenav"
+        class="sidenav alternative"
         fixedInViewport="true"
         [attr.role]="isHandset ? 'dialog' : 'navigation'"
         [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
