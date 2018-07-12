@@ -8,6 +8,8 @@ import "hammerjs";
 if (environment.production) {
   enableProdMode();
 }
+import { Props } from "./app/common/props";
+Props.API_END_POINT = environment.API_END_POINT;
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)

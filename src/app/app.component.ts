@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
     <mat-progress-bar 
       color="waring" 
       mode="indeterminate" 
-      style="position: fixed; z-index: 9999" *ngIf="showLoading">
+      style="position: fixed; z-index: 9999" *ngIf="showLoading | async">
     </mat-progress-bar>
 
     <navbar 

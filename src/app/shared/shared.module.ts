@@ -1,13 +1,15 @@
 import { NgModule, ModuleWithProviders } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HttpModule } from "@angular/http";
+import { HttpClientModule } from "@angular/common/http";
 import { AppInterceptor } from "./service/app.interceptor";
 import { CommonModule } from "@angular/common";
 import { ApexService } from "./service/apex.service";
 import { ReportService } from "./service/report.service";
 import { AppService } from "./service/app.service";
 import { HttpService } from "./service/http.service";
-
+import { MatSnackBarModule } from "@angular/material";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 import { FormMessagesComponent } from "./component/form.messages.component";
@@ -31,7 +33,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    HttpModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   declarations: [
     FilterPipe,

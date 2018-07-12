@@ -52,8 +52,9 @@ export class AuthService {
       Storage.setMenuList(data.menuList);
       this.appService.menuEmit(data.menuList);
     } else {
+      let role = data.user.role;
       this.http
-        .post(this.access_menu_url, { data: { role: data.user.role } })
+        .post(this.access_menu_url, { data: { role: role } })
         .subscribe(respData => {
           Storage.setMenuList(respData);
           this.appService.menuEmit(respData);

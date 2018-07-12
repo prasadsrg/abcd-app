@@ -14,9 +14,11 @@ export class HttpService {
     return this.http.get(url);
   }
   post(url: string, data: any) {
+    url = this.host + url;
     return this.http.post(url, data);
   }
   put(url: string, data: any) {
+    url = this.host + url;
     return this.http.put(url, data);
   }
   delete(url: string, data: any) {

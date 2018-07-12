@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import {
   HttpRequest,
   HttpResponse,
@@ -6,31 +6,31 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor
-} from '@angular/common/http';
+} from "@angular/common/http";
 
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 
-import { Storage } from '../utils/storage';
-import { ApexService } from './apex.service';
+import { Storage } from "../utils/storage";
+import { ApexService } from "./apex.service";
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
-  CONTENT_TYPE: string = "application/x-www-form-urlencoded";
-  // CONTENT_TYPE : string = "application/json";
-  constructor(private apexService: ApexService) {
-
-  }
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  //CONTENT_TYPE: string = "application/x-www-form-urlencoded";
+  CONTENT_TYPE: string = "application/json";
+  constructor(private apexService: ApexService) {}
+  intercept(
+    request: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
     request = request.clone({
       setHeaders: {
-        'Content-Type': this.CONTENT_TYPE,
-        'Authorization': `${this.getToken()}`
+        "Content-Type": this.CONTENT_TYPE,
+        Authorization: `JWT ${this.getToken()}`
       }
     });
     return next.handle(request).pipe(
-    map(
-      (resp: HttpResponse<any>) => {
+      map((resp: HttpResponse<any>) => {
         if (resp && resp.type == 4) {
           this.apexService.showLoader(false);
           if (resp.body) {
@@ -48,10 +48,9 @@ export class AppInterceptor implements HttpInterceptor {
             return resp;
           }
         }
-      }));
+      })
+    );
   }
-
-
 
   public getToken(): string {
     return Storage.getJWT();
