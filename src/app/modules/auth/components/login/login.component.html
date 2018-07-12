@@ -1,24 +1,22 @@
-<div fxLayout="row wrap" fxLayoutAlign="center end">
-  <div fxLayout="row wrap" fxLayoutAlign="center end">
-    <mat-form-field fxFlex="100 ">
-      <input matInput placeholder="Vendor Code" required [formControl]="myForm.controls.auth_vid" [(ngModel)]="auth.vid">
-      <mat-hint>
-        <form-messages [control]="myForm.controls.auth_vid "> </form-messages>
-      </mat-hint>
-    </mat-form-field>
-    <mat-form-field fxFlex="100 ">
-      <input matInput placeholder="Mobile or Email " required [formControl]="myForm.controls.auth_userId" [(ngModel)]="auth.userId">
-      <mat-hint>
-        <form-messages [control]="myForm.controls.auth_userId "> </form-messages>
-      </mat-hint>
-    </mat-form-field>
-    <mat-form-field fxFlex="100">
-      <input matInput type="{{showorhide}}" placeholder="Password " required [formControl]="myForm.controls.auth_password" [(ngModel)]="auth.password">
-      <mat-icon *ngIf="isVisible=='hide'" (click)="showPassword() " matSuffix class="pointer" style="color:black">visibility_off</mat-icon>
-      <mat-icon *ngIf="isVisible=='show'" (click)="hidePassword() " matSuffix class="pointer" style="color:black">visibility</mat-icon>
-      <mat-hint>
-        <form-messages [control]="myForm.controls.auth_password "> </form-messages>
-      </mat-hint>
-    </mat-form-field>
-  </div>
+<div fxLayout="row wrap">
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="Vendor Code" required [formControl]="myForm.controls.auth_vid" [(ngModel)]="auth.vid">
+    <mat-hint>
+      <form-messages [control]="myForm.controls.auth_vid "> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="Mobile or Email " required [formControl]="myForm.controls.auth_userId" [(ngModel)]="auth.userId">
+    <mat-hint>
+      <form-messages [control]="myForm.controls.auth_userId "> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+  <mat-form-field fxFlex="100">
+    <input matInput type="{{showorhide}}" placeholder="Password " required [formControl]="myForm.controls.auth_password" [(ngModel)]="auth.password">
+    <mat-icon *ngIf="isVisible=='hide'" (click)="showPassword() " matSuffix class="pointer" style="color:black">visibility_off</mat-icon>
+    <mat-icon *ngIf="isVisible=='show'" (click)="hidePassword() " matSuffix class="pointer" style="color:black">visibility</mat-icon>
+    <mat-hint>
+      <form-messages [control]="myForm.controls.auth_password "> </form-messages>
+    </mat-hint>
+  </mat-form-field>
 </div>
