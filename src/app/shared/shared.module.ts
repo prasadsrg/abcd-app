@@ -6,6 +6,8 @@ import { CommonModule } from "@angular/common";
 import { ApexService } from "./service/apex.service";
 import { ReportService } from "./service/report.service";
 import { AppService } from "./service/app.service";
+import { HttpService } from "./service/http.service";
+
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 import { FormMessagesComponent } from "./component/form.messages.component";
@@ -67,6 +69,7 @@ export class SharedModule {
         ApexService,
         ReportService,
         AppService,
+        HttpService,
         {
           provide: HTTP_INTERCEPTORS,
           useClass: AppInterceptor,

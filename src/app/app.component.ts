@@ -9,6 +9,7 @@ import { Observable } from "rxjs";
       mode="indeterminate" 
       style="position: fixed; z-index: 9999" *ngIf="showLoading">
     </mat-progress-bar>
+
     <navbar 
       class="mat-typography" 
       [title]="title" 
@@ -24,7 +25,7 @@ import { Observable } from "rxjs";
 export class AppComponent {
   title = "TeraData Studio";
   menuList: any[] = [];
-  sessionUser: any = {};
+  sessionUser: any = null;
   showLoading: Boolean;
   constructor() {
     this.menuList = this.getUserMenuList();

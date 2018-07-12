@@ -16,15 +16,15 @@ import { Observable } from "rxjs";
         fixedInViewport="true"
         [attr.role]="isHandset ? 'dialog' : 'navigation'"
         [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
-        [opened]="!(isHandset | async)!.matches"
+        [opened]="sessionUser && !(isHandset | async)!.matches"
         >
-        <mat-toolbar color="primary" style="height:144px !important">
+        <mat-toolbar color="primary" style="height:144px !important" *ngIf="sessionUser">
           <div fxLayout="column" fxLayoutAlign="space-evenly center" style="width: 100%; height: 100%">
           <mat-icon class="md-36">face</mat-icon>
           <caption>{{sessionUser.name}}</caption>
           </div>
         </mat-toolbar>
-        <mat-nav-list >
+        <mat-nav-list *ngIf="sessionUser">
           <ng-template ngFor let-item [ngForOf]="menuList">
             <a mat-list-item  (click)="redirect(item.link)"> {{item.name}}</a>
             <mat-divider></mat-divider>
