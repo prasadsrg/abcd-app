@@ -19,6 +19,9 @@ $alt-theme: mat-light-theme($alt-primary, $alt-accent);
   @include angular-material-theme($alt-theme);
 }
 
+//   $font-family: "Source Sans Pro",
+// $input: mat-typography-level(14px, 1.2, 400)
+
 $custom-typography: mat-typography-config(
   $font-family: "Source Sans Pro",
   $display-4: mat-typography-level(112px, 112px, 300),
@@ -32,10 +35,14 @@ $custom-typography: mat-typography-config(
   $body-2: mat-typography-level(16px, 24px, 300),
   $body-1: mat-typography-level(14px, 20px, 400),
   $caption: mat-typography-level(12px, 20px, 300),
-  $button: mat-typography-level(18px, 14px, 300),
-  $input: mat-typography-level(13px, 1.2, 300)
+  $button: mat-typography-level(16px, 14px, 300)
 );
 @include angular-material-typography($custom-typography);
+
+.mat-form-field-should-float .mat-form-field-label {
+  // color: #789 !important;
+  font-size: 16px;
+}
 
 .mat-toolbar {
   height: 48px !important;
@@ -64,4 +71,19 @@ $custom-typography: mat-typography-config(
 
 .material-icons.md-48 {
   font-size: 48px;
+}
+head {
+  .mat-toolbar {
+    button {
+      height: 48px !important;
+      min-width: 48px !important;
+      border-radius: 0;
+      line-height: unset;
+      opacity: 0.7;
+      &:last-child {
+        margin-right: -16px;
+        opacity: 1 !important;
+      }
+    }
+  }
 }

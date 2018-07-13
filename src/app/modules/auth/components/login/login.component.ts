@@ -1,13 +1,17 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { User } from "../../../../entities/user";
+import { ControlContainer, NgForm } from "@angular/forms";
+import { Props } from "../../../../common/props";
 
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"]
+  styleUrls: ["./login.component.scss"],
+  viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
 })
 export class LoginComponent implements OnInit {
-  @Input() myForm: any;
+  // @Input() myForm: any;
+  Props: any = Props;
   @Input() auth: User;
 
   showorhide: string;

@@ -1,5 +1,6 @@
 import { NgModule, ModuleWithProviders } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ControlContainer, NgForm } from "@angular/forms";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { HttpModule } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
