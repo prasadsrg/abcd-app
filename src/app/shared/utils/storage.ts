@@ -1,6 +1,6 @@
 /** Storage  */
 export class Storage {
-  static pid: string = "DLTECH";
+  static pid: string = "dff";
   static setLocalItem(key: string, val: any) {
     key = this.pid + "-" + key;
     if (val) {
@@ -32,19 +32,13 @@ export class Storage {
     key = this.pid + "-" + key;
 
     if (val) {
-      console.log(key);
-      console.log(val);
-      console.log(Array.isArray(val));
       if (typeof val === "object") {
         val = JSON.stringify(val);
       } else if (Array.isArray(val)) {
-        console.log(val);
         val = JSON.stringify(val);
-        console.log(val);
       }
 
       sessionStorage.setItem(key, val);
-      console.log(sessionStorage.getItem(key));
     }
   }
 
@@ -92,7 +86,6 @@ export class Storage {
     }
   }
   static getMenuList(): any {
-    console.log(this.getSessionItem("menu"));
     return this.getSessionItem("menu");
   }
 

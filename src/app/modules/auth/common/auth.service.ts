@@ -79,4 +79,9 @@ export class AuthService {
   navigateSignin() {
     this.appService.navigate(Props.SIGN_IN_PAGE, []);
   }
+
+  userMenuEmit() {
+    this.appService.sessionUserEmit(null);
+    this.appService.menuEmit(null);
+  }
 }

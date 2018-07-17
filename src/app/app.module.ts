@@ -18,7 +18,7 @@ import { SharedModule } from "./shared/shared.module";
     FlexLayoutModule,
     AppdRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
