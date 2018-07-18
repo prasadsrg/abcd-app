@@ -5,31 +5,39 @@ import { DomSanitizer } from "@angular/platform-browser";
 
 @Injectable()
 export class ApexService {
-  sessionUserEvent: EventEmitter<any> = new EventEmitter();
-  menuEvent: EventEmitter<any> = new EventEmitter();
-
-  private loaderSubject = new BehaviorSubject<Boolean>(false);
-  loaderEvent: Observable<Boolean> = this.loaderSubject.asObservable();
+  private _loaderSubject: Subject<Boolean> = new BehaviorSubject(false);
+  private _sessionUserSubject: Subject<Object> = new BehaviorSubject(null);
+  private _menuSubject: Subject<Object[]> = new BehaviorSubject(null);
 
   constructor(
     private _domSanitizer: DomSanitizer,
     private _snackBarService: MatSnackBar
   ) {}
   showMessage(message: string) {
-    this._snackBarService.open(message, "x", { duration: 3000 });
+    this._snackBarService.open(message, "x", { duration: 999999999 });
   }
   showLoader(show: Boolean) {
-    console.log("show-loader:" + show);
-    this.loaderSubject.next(show);
+    console.log("show loader: " + show);
+    this._loaderSubject.next(show);
   }
 
-  sessionUserEmit(sessionUser: any) {
-    console.log(sessionUser);
-    this.sessionUserEvent.emit(sessionUser);
+  loaderEvent(): Observable<Boolean> {
+    return this._loaderSubject.asObservable();
   }
+  sessionUserEvent(): Observable<Object> {
+    return this._sessionUserSubject.asObservable();
+  }
+  menuEvent(): Observable<Object[]> {
+    return this._menuSubject.asObservable();
+  }
+
   menuEmit(menu: any) {
-    this.menuEvent.emit(menu);
+    this._menuSubject.next(menu);
   }
+  sessionUserEmit(sessionUser: any) {
+    this._sessionUserSubject.next(sessionUser);
+  }
+
   bypassURL(url: string) {
     return this._domSanitizer.bypassSecurityTrustResourceUrl(url);
   }

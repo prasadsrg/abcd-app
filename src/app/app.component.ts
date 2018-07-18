@@ -6,13 +6,7 @@ import { AppService } from "./shared/service/app.service";
 @Component({
   selector: "app-root",
   template: `
-    <mat-progress-bar 
-      color="waring" 
-      mode="indeterminate" 
-      style="position: fixed; z-index: 9999" 
-      *ngIf="true == (showLoading | async)">
-    </mat-progress-bar>
-
+    <apex-progress-bar></apex-progress-bar>
     <navbar 
       class="mat-typography" 
       [title]="title" 
@@ -29,25 +23,18 @@ export class AppComponent implements OnInit {
   title = "TeraData Studio";
   menuList: any[] = [];
   sessionUser: any = null;
-  showLoading: Observable<Boolean>;
+
   constructor(
     private apexService: ApexService,
     private appService: AppService
   ) {
-    this.showLoading = this.apexService.loaderEvent;
-    this.apexService.menuEvent.subscribe($event => this.menuEvent($event));
-    this.apexService.sessionUserEvent.subscribe($event =>
-      this.sessionUserEvent($event)
-    );
+    this.apexService.menuEvent().subscribe($event => this.menuEvent($event));
+    this.apexService
+      .sessionUserEvent()
+      .subscribe($event => this.sessionUserEvent($event));
   }
 
   ngOnInit(): void {
-    let showLoader = false;
-    // setInterval(() => {
-    //   showLoader = !showLoader;
-    //   this.appService.showLoader(showLoader);
-    // }, 2000);
-    //this.appService.showLoader(true);
     let sessionUser = this.appService.getSessionUser();
     this.appService.sessionUserEmit(sessionUser);
 
@@ -65,31 +52,6 @@ export class AppComponent implements OnInit {
   }
 
   outputEvent($event: any) {
-    console.log($event);
+    this.appService.navigate($event, []);
   }
-
-  // getUserMenuList() {
-  //   return [
-  //     {
-  //       name: "Home",
-  //       link: "welcome/welcome"
-  //     },
-  //     {
-  //       name: "DashBoard",
-  //       link: "dashboard/dashboard"
-  //     },
-  //     {
-  //       name: "AppData",
-  //       link: "appdata/appdata"
-  //     },
-  //     {
-  //       name: "Access Menu",
-  //       link: "access_menu/access_menu"
-  //     },
-  //     {
-  //       name: "Profile",
-  //       link: "profile/profile"
-  //     }
-  //   ];
-  // }
 }

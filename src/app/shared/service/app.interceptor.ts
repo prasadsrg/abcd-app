@@ -31,6 +31,7 @@ export class AppInterceptor implements HttpInterceptor {
     });
     return next.handle(request).pipe(
       map((resp: HttpResponse<any>) => {
+        this.apexService.showLoader(true);
         if (resp && resp.type == 4) {
           this.apexService.showLoader(false);
           if (resp.body) {
@@ -47,6 +48,7 @@ export class AppInterceptor implements HttpInterceptor {
           } else {
             return resp;
           }
+        } else {
         }
       })
     );

@@ -29,6 +29,7 @@ import { Observable } from "rxjs";
             <a mat-list-item  (click)="redirect(item.link)"> {{item.name}}</a>
             <mat-divider></mat-divider>
           </ng-template>
+          <a mat-list-item  (click)="redirect('auth/login')"> Singout</a>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content style="overflow: hidden !important;">
@@ -42,6 +43,7 @@ import { Observable } from "rxjs";
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
           </button>
           <span style="font-weight: 500">{{title}}</span>
+
         </mat-toolbar>
         <router-outlet></router-outlet>
       </mat-sidenav-content>

@@ -8,6 +8,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MaterialModule } from "./material.module";
 import { AppdRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
+import { AuthModule } from "./modules/auth/auth.module";
+import { ApexService } from "./shared/service/apex.service";
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
@@ -20,7 +22,7 @@ import { SharedModule } from "./shared/shared.module";
     MaterialModule,
     SharedModule.forRoot()
   ],
-  providers: [],
+  providers: [ApexService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

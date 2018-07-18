@@ -4,6 +4,7 @@ import { HttpService } from "../../../shared/service/http.service";
 import { Storage } from "../../../shared/utils/storage";
 import * as decode from "jwt-decode";
 import { Props } from "../../../common/props";
+import { ApexService } from "../../../shared/service/apex.service";
 
 @Injectable()
 export class AuthService {
@@ -11,7 +12,11 @@ export class AuthService {
   private access_menu_url = "/access_menu";
   private forgotPassword_url = "/auth/forgotpassword";
   private resetPassword_url = "/auth/resetpassword";
-  constructor(private http: HttpService, private appService: AppService) {}
+  constructor(
+    private http: HttpService,
+    private appService: AppService,
+    private apexService: ApexService
+  ) {}
   getParamUserId() {
     return this.appService.getParam("userId");
   }
@@ -24,7 +29,7 @@ export class AuthService {
       username: data.username,
       password: data.password
     };
-    this.appService.showLoader(true);
+    this.apexService.showLoader(true);
     return this.http.post(this.auth_url, reqData);
   }
   forgotPassword(data: any) {
@@ -66,18 +71,18 @@ export class AuthService {
   }
 
   navigateDashBoard() {
-    this.appService.navigate(Props.DASHBOARD_PAGE, []);
+    this.appService.navigate(Props.MENU.DASH_BOARD.link, []);
   }
   navigateForgotPassword() {
-    this.appService.navigate(Props.FORGOT_PASSWORD_PAGE, []);
+    this.appService.navigate(Props.MENU.FORGOT_PASSWORD.link, []);
   }
   navigateResetPassword(data: any) {
-    this.appService.navigate(Props.RESET_PASSWORD_PAGE, [
+    this.appService.navigate(Props.MENU.RESET_PASSWORD.link, [
       { userId: data.email }
     ]);
   }
   navigateSignin() {
-    this.appService.navigate(Props.SIGN_IN_PAGE, []);
+    this.appService.navigate(Props.MENU.SIGN_IN.link, []);
   }
 
   userMenuEmit() {

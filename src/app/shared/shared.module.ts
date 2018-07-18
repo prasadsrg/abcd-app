@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from "@angular/core";
+import { NgModule, ModuleWithProviders, ErrorHandler } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ControlContainer, NgForm } from "@angular/forms";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -10,7 +10,7 @@ import { ApexService } from "./service/apex.service";
 import { ReportService } from "./service/report.service";
 import { AppService } from "./service/app.service";
 import { HttpService } from "./service/http.service";
-import { MatSnackBarModule } from "@angular/material";
+import { MatSnackBarModule, MatProgressBarModule } from "@angular/material";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 import { FormMessagesComponent } from "./component/form.messages.component";
@@ -27,6 +27,8 @@ import {
 } from "./utils/pipes";
 
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { ProgressBarComponent } from "./component/progress-bar.component";
+import { ErrorsService } from "./service/errors.service";
 
 @NgModule({
   imports: [
@@ -37,7 +39,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     InfiniteScrollModule,
     HttpModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressBarModule
   ],
   declarations: [
     FilterPipe,
@@ -48,7 +51,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     FlagPipe,
     CurrencyPipe,
     FormMessagesComponent,
-    InfiniteListComponent
+    InfiniteListComponent,
+    ProgressBarComponent
   ],
   exports: [
     CommonModule,
@@ -64,7 +68,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     CurrencyPipe,
     FormMessagesComponent,
     InfiniteScrollModule,
-    InfiniteListComponent
+    InfiniteListComponent,
+    ProgressBarComponent
   ]
 })
 export class SharedModule {
@@ -80,6 +85,10 @@ export class SharedModule {
           provide: HTTP_INTERCEPTORS,
           useClass: AppInterceptor,
           multi: true
+        },
+        {
+          provide: ErrorHandler,
+          useClass: ErrorsService
         }
       ]
     };
