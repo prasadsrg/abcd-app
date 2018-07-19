@@ -29,7 +29,6 @@ export class AuthService {
       username: data.username,
       password: data.password
     };
-    this.apexService.showLoader(true);
     return this.http.post(this.auth_url, reqData);
   }
   forgotPassword(data: any) {

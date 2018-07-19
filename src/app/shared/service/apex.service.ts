@@ -3,7 +3,9 @@ import { Injectable, Output, EventEmitter } from "@angular/core";
 import { Observable, AsyncSubject, Subject, BehaviorSubject } from "rxjs";
 import { DomSanitizer } from "@angular/platform-browser";
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class ApexService {
   private _loaderSubject: Subject<Boolean> = new BehaviorSubject(false);
   private _sessionUserSubject: Subject<Object> = new BehaviorSubject(null);

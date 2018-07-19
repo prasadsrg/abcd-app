@@ -29,9 +29,9 @@ export class AppInterceptor implements HttpInterceptor {
         Authorization: `JWT ${this.getToken()}`
       }
     });
+    this.apexService.showLoader(true);
     return next.handle(request).pipe(
       map((resp: HttpResponse<any>) => {
-        this.apexService.showLoader(true);
         if (resp && resp.type == 4) {
           this.apexService.showLoader(false);
           if (resp.body) {

@@ -1,8 +1,6 @@
 import { NgModule, ModuleWithProviders, ErrorHandler } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { ControlContainer, NgForm } from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
-import { HttpModule } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
 import { AppInterceptor } from "./service/app.interceptor";
 import { CommonModule } from "@angular/common";
@@ -35,10 +33,9 @@ import { ErrorsService } from "./service/errors.service";
     CommonModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule,
     InfiniteScrollModule,
-    HttpModule,
     HttpClientModule,
+
     MatSnackBarModule,
     MatProgressBarModule
   ],
@@ -57,7 +54,6 @@ import { ErrorsService } from "./service/errors.service";
   exports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     FlexLayoutModule,
     FilterPipe,
     KeyValuesPipe,

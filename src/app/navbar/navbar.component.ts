@@ -5,6 +5,7 @@ import {
   BreakpointState
 } from "@angular/cdk/layout";
 import { Observable } from "rxjs";
+import { AnimationService } from "../shared/service/animation.service";
 
 @Component({
   selector: "navbar",
@@ -38,6 +39,7 @@ import { Observable } from "rxjs";
             type="button"
             aria-label="Toggle sidenav"
             mat-icon-button
+            style="float: right"
             (click)="drawer.toggle()"
             *ngIf="(isHandset | async)!.matches">
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
@@ -45,7 +47,8 @@ import { Observable } from "rxjs";
           <span style="font-weight: 500">{{title}}</span>
 
         </mat-toolbar>
-        <router-outlet></router-outlet>
+
+          <router-outlet #o="outlet"></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
   `,
@@ -68,7 +71,8 @@ import { Observable } from "rxjs";
         height: 35px !important;
       }
     `
-  ]
+  ],
+  animations: [AnimationService.fadeAnimation]
 })
 export class NavbarComponent {
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(

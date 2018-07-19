@@ -16,7 +16,11 @@ export class ErrorsService implements ErrorHandler {
       } else {
         // Handle Http Error (error.status === 403, 404...)
         //return notificationService.notify(`${error.status} - ${error.message}`);
-        this.apexService.showMessage(error.message);
+        if (error.statusText) {
+          this.apexService.showMessage(error.statusText);
+        } else {
+          this.apexService.showMessage(error.message);
+        }
       }
     } else {
       console.log(error);

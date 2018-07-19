@@ -13,12 +13,7 @@ import { ResetPasswordComponent } from "./components/reset-password/reset-passwo
 import { AuthService } from "./common/auth.service";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    MaterialModule,
-    SharedModule.forRoot()
-  ],
+  imports: [CommonModule, AuthRoutingModule, MaterialModule, SharedModule],
   declarations: [
     LoginContainerComponent,
     ForgotPasswordContainerComponent,
