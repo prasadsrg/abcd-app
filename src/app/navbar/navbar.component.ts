@@ -6,6 +6,40 @@ import {
 } from "@angular/cdk/layout";
 import { Observable } from "rxjs";
 import { AnimationService } from "../shared/service/animation.service";
+import {
+  trigger,
+  animate,
+  style,
+  group,
+  query,
+  transition
+} from "@angular/animations";
+
+export const routerTransition = trigger("routerTransition", [
+  transition("* <=> *", [
+    query(":enter, :leave", style({ position: "fixed", width: "100%" }), {
+      optional: true
+    }),
+    group([
+      query(
+        ":enter",
+        [
+          style({ transform: "translateX(100%)" }),
+          animate("0.5s ease-in-out", style({ transform: "translateX(0%)" }))
+        ],
+        { optional: true }
+      ),
+      query(
+        ":leave",
+        [
+          style({ transform: "translateX(0%)" }),
+          animate("0.5s ease-in-out", style({ transform: "translateX(-100%)" }))
+        ],
+        { optional: true }
+      )
+    ])
+  ])
+]);
 
 @Component({
   selector: "navbar",
@@ -47,8 +81,9 @@ import { AnimationService } from "../shared/service/animation.service";
           <span style="font-weight: 500">{{title}}</span>
 
         </mat-toolbar>
-
+        <span [@routerTransition]="o.isActivated ? o.activatedRoute : ''">
           <router-outlet #o="outlet"></router-outlet>
+        </span>
       </mat-sidenav-content>
     </mat-sidenav-container>
   `,
@@ -70,9 +105,14 @@ import { AnimationService } from "../shared/service/animation.service";
       .mat-list-item {
         height: 35px !important;
       }
+      router-outlet ~ * {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+      }
     `
   ],
-  animations: [AnimationService.fadeAnimation]
+  animations: [routerTransition]
 })
 export class NavbarComponent {
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(
