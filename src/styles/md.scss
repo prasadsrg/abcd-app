@@ -3,7 +3,7 @@
 @import "~@angular/material/theming";
 @include mat-core();
 
-$mat-primary: mat-palette($mat-blue, 700, 100, 900);
+$mat-primary: mat-palette($mat-deep-purple, 700, 100, 900);
 $mat-accent: mat-palette($mat-amber, 800, 100, 900);
 $mat-warn: mat-palette($mat-red, 800, 100, 900);
 
@@ -49,6 +49,10 @@ $custom-typography: mat-typography-config(
 }
 .mat-spacer {
   flex: 1 1 auto;
+}
+.sidenav {
+  width: 180px;
+  box-shadow: 0 100px 2px 2px #dedee3;
 }
 .material-icons {
   vertical-align: middle;

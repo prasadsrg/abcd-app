@@ -97,22 +97,16 @@ export const routerTransition = trigger("routerTransition", [
         height: 100%;
       }
       .mat-toolbar {
-        box-shadow: 0 2px 5px 0 hsla(240, 3%, 85%, 0.7);
         transform: translateZ(0);
         z-index: 99;
       }
 
       .sidenav {
         width: 180px;
-        box-shadow: 1px 0 1px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 100px 2px 2px #dedee3;
       }
       .mat-list-item {
         height: 35px !important;
-      }
-      router-outlet ~ * {
-        position: fixed;
-        height: 100%;
-        width: 100%;
       }
     `
   ],
