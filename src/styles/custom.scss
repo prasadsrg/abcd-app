@@ -5,6 +5,12 @@ h4,
 h5 {
   margin: 0 !important;
 }
+a {
+  cursor: pointer !important;
+  color: darkorange;
+  text-decoration: none;
+  font-weight: 600;
+}
 aside {
   height: calc(100% - 99px);
   head {
