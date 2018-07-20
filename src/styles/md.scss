@@ -50,6 +50,9 @@ $custom-typography: mat-typography-config(
 .mat-spacer {
   flex: 1 1 auto;
 }
+.mat-card-title {
+  margin-bottom: 0px !important;
+}
 .sidenav {
   width: 180px;
   box-shadow: 0 100px 2px 2px #dedee3;
