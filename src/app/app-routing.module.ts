@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule, PreloadAllModules } from "@angular/router";
+import { AuthService } from "./shared/service/auth.service";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "auth" },
@@ -13,7 +14,8 @@ const routes: Routes = [
   },
   {
     path: "dashboard",
-    loadChildren: "./modules/dashboard/dashboard.module#DashboardModule"
+    loadChildren: "./modules/dashboard/dashboard.module#DashboardModule",
+    canActivate: [AuthService]
   }
 ];
 

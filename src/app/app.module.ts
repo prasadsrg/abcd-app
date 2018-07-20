@@ -10,6 +10,7 @@ import { MaterialModule } from "./material.module";
 import { AppdRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
 import { ApexService } from "./shared/service/apex.service";
+import { AuthService } from "./shared/service/auth.service";
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
@@ -22,7 +23,7 @@ import { ApexService } from "./shared/service/apex.service";
     MaterialModule,
     SharedModule.forRoot()
   ],
-  providers: [ApexService],
+  providers: [ApexService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
