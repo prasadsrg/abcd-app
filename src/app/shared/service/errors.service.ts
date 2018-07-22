@@ -1,5 +1,5 @@
 import { ErrorHandler, Injectable, Injector } from "@angular/core";
-import { HttpErrorResponse } from "../../../../node_modules/@angular/common/http";
+import { HttpErrorResponse } from "@angular/common/http";
 import { ApexService } from "./apex.service";
 @Injectable()
 export class ErrorsService implements ErrorHandler {

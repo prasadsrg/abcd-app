@@ -5,10 +5,9 @@ import { Storage } from "../../../../shared/utils/storage";
 
 @Component({
   selector: "app-login-container",
-  templateUrl: "./login-container.component.html",
-  styleUrls: ["./login-container.component.scss"]
+  templateUrl: "./login.container.html"
 })
-export class LoginContainerComponent implements OnInit {
+export class LoginContainer implements OnInit {
   auth: User;
 
   constructor(private authService: AuthService) {
