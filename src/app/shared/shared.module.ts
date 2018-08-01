@@ -35,7 +35,6 @@ import { ErrorsService } from "./service/errors.service";
     FormsModule,
     InfiniteScrollModule,
     HttpClientModule,
-
     MatSnackBarModule,
     MatProgressBarModule
   ],
