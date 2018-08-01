@@ -94,3 +94,17 @@ head {
     }
   }
 }
+
+.mat-drawer {
+  min-width: unset !important;
+}
+.fab-bottom-right {
+  bottom: 1rem;
+  right: 2rem;
+  position: absolute !important;
+}
+.fab-placeholder {
+  top: 24px !important;
+  right: 2rem;
+  position: absolute !important;
+}

@@ -1,0 +1,22 @@
+<aside class="alternative">
+
+  <head>
+    <mat-toolbar>
+      <span> Welcome Page </span>
+      <span class="mat-spacer"></span>
+      <button mat-raised-button color="primary">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-raised-button color="primary">
+        <mat-icon>filter_list</mat-icon>
+      </button>
+    </mat-toolbar>
+
+  </head>
+  <main class="gap bg-img">
+    <app-welcome-news></app-welcome-news>
+    <button mat-fab color="accent" class="fab-bottom-right" (click)="login()">
+      <mat-icon>inputs</mat-icon>
+    </button>
+  </main>
+</aside>
