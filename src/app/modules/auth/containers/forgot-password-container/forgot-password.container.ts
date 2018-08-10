@@ -22,11 +22,13 @@ export class ForgotPasswordContainer implements OnInit {
   }
   ngAfterViewInit() {}
 
-  forgotpassword() {
-    this.authService.forgotPassword(this.auth).subscribe(data => {
-      this.authService.storageSave(data);
-      this.authService.navigateSignin();
-    });
+  resetPassword(){
+    this.authService.forgotPassword(this.auth).subscribe( (data: any) => {
+      this.authService.showMessage(data);
+      this.authService.navigateResetPassword(this.auth);
+    })
   }
-  
+  back(){
+    this.authService.navigateSignin();
+  }
 }
