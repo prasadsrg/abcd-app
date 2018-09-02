@@ -18,7 +18,10 @@ export class AuthService {
     private apexService: ApexService
   ) {}
   getParamUserId() {
-    return this.appService.getParam("userId");
+    return this.appService.getParam("userid");
+  }
+  getParamVID() {
+    return this.appService.getParam("vid");
   }
   showMessage(message: string) {
     this.appService.showMessage(message);
@@ -40,9 +43,12 @@ export class AuthService {
     return this.http.get(this.auth_url, { data: reqData });
   }
   resetPassword(data: any) {
-    data.grpcode = Storage.pid;
+    // let reqData = {
+    //   userid: data.userid,
+    //   vid: data.vid
+    // };
     this.appService.showLoader(true);
-    return this.http.put(this.resetPassword_url, { data: data });
+    return this.http.put(this.auth_url, { data: data });
   }
   storageSave(data: any) {
     if (data.access_token) {
@@ -79,7 +85,8 @@ export class AuthService {
   }
   navigateResetPassword(data: any) {
     this.appService.navigate(Props.MENU.RESET_PASSWORD.link, [
-      { userId: data.email }
+      { userid: data.userid },
+      { vid: data.vid }
     ]);
   }
   navigateSignin() {

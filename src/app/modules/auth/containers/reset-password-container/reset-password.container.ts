@@ -14,22 +14,23 @@ export class ResetPasswordContainer implements OnInit {
   constructor(private authService: AuthService) {
     Storage.clearSession();
     this.auth = new User();
-    // ResetPasswordForm.edit(this.myForm);
-    // this.init();
   }
 
   ngOnInit() {
-    this.authService.userMenuEmit();
+    this.auth = new User();
+    this.auth.userid = this.authService.getParamUserId();
+    this.auth.vid = this.authService.getParamVID();
   }
   ngAfterViewInit() {}
   // init() {
-  //   this.auth = new User();
-  //   this.auth.email = this.authService.getParamUserId();
+
   // }
-  resetPassword(){
-    this.authService.resetPassword(this.auth).subscribe( (data: any) => {
-      this.authService.showMessage(data);
+  resetPassword() {
+    this.authService.resetPassword(this.auth).subscribe((data: any) => {
+      if (data) {
+        this.authService.showMessage(data.message);
+      }
       this.authService.navigateSignin();
-    })
+    });
   }
 }

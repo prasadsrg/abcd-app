@@ -40,7 +40,9 @@ export class AppInterceptor implements HttpInterceptor {
                 body: resp.body.data
               });
             } else if (resp.body.status == 0) {
-              this.errorMessage(resp.body.error);
+              this.errorMessage(
+                resp.body.error ? resp.body.error : resp.body.data
+              );
               return null;
             } else {
               return resp;

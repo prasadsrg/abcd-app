@@ -9,7 +9,7 @@ export class HttpService {
   constructor(private http: HttpClient) {}
 
   get(url: string, data: any) {
-    let paramString = Util.GetParamString(data ? data : {});
+    let paramString = Util.GetParamString(data ? data.data : {});
     url = this.host + url + paramString;
     return this.http.get(url);
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input} from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { User } from "../../../../entities/user";
 import { Props } from "../../../../common/props";
 import { AuthService } from "../../common/auth.service";
@@ -17,18 +17,18 @@ export class ForgotPasswordContainer implements OnInit {
     this.auth = new User();
   }
 
-  ngOnInit() {
-    this.authService.userMenuEmit();
-  }
+  ngOnInit() {}
   ngAfterViewInit() {}
 
-  resetPassword(){
-    this.authService.forgotPassword(this.auth).subscribe( (data: any) => {
-      this.authService.showMessage(data);
+  resetPassword() {
+    this.authService.forgotPassword(this.auth).subscribe((data: any) => {
+      if (data) {
+        this.authService.showMessage(data.message);
+      }
       this.authService.navigateResetPassword(this.auth);
-    })
+    });
   }
-  back(){
+  back() {
     this.authService.navigateSignin();
   }
 }
