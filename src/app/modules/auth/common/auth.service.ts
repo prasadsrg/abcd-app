@@ -32,10 +32,12 @@ export class AuthService {
     return this.http.post(this.auth_url, reqData);
   }
   forgotPassword(data: any) {
-    delete data.userId;
-    data.grpcode = Storage.pid;
+    let reqData = {
+      userid: data.userid,
+      vid: data.vid
+    };
     this.appService.showLoader(true);
-    return this.http.put(this.forgotPassword_url, { data: data });
+    return this.http.get(this.auth_url, { data: reqData });
   }
   resetPassword(data: any) {
     data.grpcode = Storage.pid;
