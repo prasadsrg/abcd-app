@@ -4,18 +4,22 @@
     <mat-toolbar>
       <span> Profile </span>
       <span class="mat-spacer"></span>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" (click)="addItem()">
         <mat-icon>add</mat-icon>
       </button>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" (click)="addFilter()">
         <mat-icon>filter_list</mat-icon>
       </button>
     </mat-toolbar>
 
   </head>
-  <main class="gap bg-img" style="background: rgba(255,255,255, 0.8); ">
+  <main class="gap">
 
-    <h1>Welcome to Profile</h1>
+    <app-profile-table [inputData]="dataList"> </app-profile-table>
 
   </main>
 </aside>
+
+<mat-sidenav id="sidenav1" position="end" mode="over " [opened]="showNav1">
+  <app-profile-filter [(inputData)]="filterInput" (outputEmitter)="filterClose($event)"></app-profile-filter>
+</mat-sidenav>

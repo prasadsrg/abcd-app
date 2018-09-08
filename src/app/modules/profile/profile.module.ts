@@ -7,10 +7,12 @@ import { ProfileSearchComponent } from "./containers/profile-search/profile-sear
 import { ProfileEditComponent } from "./containers/profile-edit/profile-edit.component";
 import { SharedModule } from "../../shared/shared.module";
 import { MaterialModule } from "../../material.module";
+import { ProfileTableComponent } from './components/profile-table/profile-table.component';
+import { ProfileFilterComponent } from './components/profile-filter/profile-filter.component';
 
 @NgModule({
   imports: [CommonModule, ProfileRoutingModule, MaterialModule, SharedModule],
-  declarations: [ProfileSearchComponent, ProfileEditComponent],
+  declarations: [ProfileSearchComponent, ProfileEditComponent, ProfileTableComponent, ProfileFilterComponent],
   providers: [ProfileService]
 })
 export class ProfileModule {}

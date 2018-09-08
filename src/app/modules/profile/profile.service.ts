@@ -14,4 +14,8 @@ export class ProfileService {
   showMessage(message: string) {
     this.appService.showMessage(message);
   }
+
+  search(filter: any) {
+    return this.http.post(this.service_url, { data: filter });
+  }
 }

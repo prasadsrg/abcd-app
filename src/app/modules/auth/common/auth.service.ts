@@ -67,7 +67,7 @@ export class AuthService {
             Storage.setMenuList(respData);
             this.appService.menuEmit(respData);
           });
-      }, 10);
+      }, 50);
     }
     if (data.branchId) {
       Storage.setBranch(data.branchId);

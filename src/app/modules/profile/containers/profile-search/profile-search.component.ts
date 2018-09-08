@@ -8,10 +8,35 @@ import { ProfileService } from "../../profile.service";
   styleUrls: ["./profile-search.component.scss"]
 })
 export class ProfileSearchComponent implements OnInit {
+  dataList: any[] = [];
+  filter: any = {};
+  filterInput: any = {};
+  showNav1: boolean = false;
   constructor(
     private dataService: DataService,
     private profileService: ProfileService
-  ) {}
+  ) {
+    this.search();
+  }
 
   ngOnInit() {}
+
+  search() {
+    this.profileService.search(this.filter).subscribe((dataList: any[]) => {
+      this.dataList = dataList;
+    });
+  }
+  addItem() {}
+  addFilter() {
+    this.showNav1 = !this.showNav1;
+  }
+
+  filterClose($event: any) {
+    this.showNav1 = false;
+    if ($event == true) {
+      this.filter = Object.assign({}, this.filterInput);
+    } else {
+      this.filterInput = Object.assign({}, this.filter);
+    }
+  }
 }
