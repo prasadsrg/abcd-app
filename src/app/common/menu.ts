@@ -8,9 +8,9 @@ export let MENU = {
   // MY_PROFILE: { name: "My Profile", link: "profile/myprofile" },
   PROFILE_EDIT: { name: "Profile", link: "profile/edit" },
   PROFILE_SEARCH: { name: "Profiles", link: "profile/search" },
-  PROFILES: { name: "Profiles", link: "profile/search" }
+  PROFILES: { name: "Profiles", link: "profile/search" },
   // DASH_BOARD: { name: "DashBoard", link: "dashboard/dashboard" },
-  // APP_DATA: { name: "AppData", link: "appdata/appdata" },
-  // ACCESS_MENU: { name: "Access Menu", link: "access_menu/access_menu" },
+  APP_DATA: { name: "App Data", link: "access/appdata" },
+  ACCESS_MENU: { name: "Access Menu", link: "access/access_menu" },
   // PROFILE: { name: "Profile", link: "profile/profile" }
 };

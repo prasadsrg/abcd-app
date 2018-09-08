@@ -21,6 +21,11 @@ const routes: Routes = [
     path: "profile",
     loadChildren: "./modules/profile/profile.module#ProfileModule",
     canActivate: [AuthService]
+  },
+  {
+    path: "access",
+    loadChildren: "./modules/access/access.module#AccessModule",
+    // canActivate: [AuthService]
   }
 ];
 
