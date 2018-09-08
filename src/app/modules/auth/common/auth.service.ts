@@ -4,7 +4,6 @@ import { HttpService } from "../../../shared/service/http.service";
 import { Storage } from "../../../shared/utils/storage";
 import * as decode from "jwt-decode";
 import { Props } from "../../../common/props";
-import { ApexService } from "../../../shared/service/apex.service";
 
 @Injectable()
 export class AuthService {
@@ -12,11 +11,7 @@ export class AuthService {
   private access_menu_url = "/access_menu";
   private forgotPassword_url = "/auth/forgotpassword";
   private resetPassword_url = "/auth/resetpassword";
-  constructor(
-    private http: HttpService,
-    private appService: AppService,
-    private apexService: ApexService
-  ) {}
+  constructor(private http: HttpService, private appService: AppService) {}
   getParamUserId() {
     return this.appService.getParam("userid");
   }
@@ -64,13 +59,15 @@ export class AuthService {
       Storage.setMenuList(data.menuList);
       this.appService.menuEmit(data.menuList);
     } else {
-      let role = data.user.role;
-      this.http
-        .post(this.access_menu_url, { data: { role: role } })
-        .subscribe(respData => {
-          Storage.setMenuList(respData);
-          this.appService.menuEmit(respData);
-        });
+      setTimeout(() => {
+        let role = data.user.role;
+        this.http
+          .post(this.access_menu_url, { data: { role: role } })
+          .subscribe(respData => {
+            Storage.setMenuList(respData);
+            this.appService.menuEmit(respData);
+          });
+      }, 10);
     }
     if (data.branchId) {
       Storage.setBranch(data.branchId);
@@ -78,7 +75,7 @@ export class AuthService {
   }
 
   navigateDashBoard() {
-    this.appService.navigate(Props.MENU.DASH_BOARD.link, []);
+    this.appService.navigate(Props.MENU.DASHBOARD.link, []);
   }
   navigateForgotPassword() {
     this.appService.navigate(Props.MENU.FORGOT_PASSWORD.link, []);

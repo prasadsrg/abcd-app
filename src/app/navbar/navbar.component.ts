@@ -14,6 +14,7 @@ import {
   query,
   transition
 } from "@angular/animations";
+import { Props } from "../common/props";
 
 export const routerTransition = trigger("routerTransition", [
   transition("* <=> *", [
@@ -65,7 +66,7 @@ export const routerTransition = trigger("routerTransition", [
         </mat-toolbar>
         <mat-nav-list *ngIf="sessionUser">
           <ng-template ngFor let-item [ngForOf]="menuList">
-            <a mat-list-item  (click)="redirect(item.link)"> {{item.name}}</a>
+            <a mat-list-item  (click)="redirect(item.menu)"> {{item.name}}</a>
             <mat-divider></mat-divider>
           </ng-template>
           <a mat-list-item  (click)="redirect('auth/login')"> Singout</a>
@@ -116,13 +117,21 @@ export class NavbarComponent {
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(
     Breakpoints.Handset
   );
-  @Input() title: string;
-  @Input() menuList: any[];
-  @Input() sessionUser: any;
-  @Output() outputEvent = new EventEmitter();
+  @Input()
+  title: string;
+  @Input()
+  menuList: any[];
+  @Input()
+  sessionUser: any;
+  @Output()
+  outputEvent = new EventEmitter();
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   redirect(link: string) {
-    this.outputEvent.emit(link);
+    if (link.indexOf("/") > 0) {
+      this.outputEvent.emit(link);
+    } else {
+      this.outputEvent.emit(Props.MENU[link.toUpperCase()].link);
+    }
   }
 }

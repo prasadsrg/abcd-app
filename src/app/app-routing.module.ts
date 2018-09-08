@@ -16,6 +16,11 @@ const routes: Routes = [
     path: "dashboard",
     loadChildren: "./modules/dashboard/dashboard.module#DashboardModule",
     canActivate: [AuthService]
+  },
+  {
+    path: "profile",
+    loadChildren: "./modules/profile/profile.module#ProfileModule",
+    canActivate: [AuthService]
   }
 ];
 

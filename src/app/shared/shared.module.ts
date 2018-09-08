@@ -8,6 +8,7 @@ import { ApexService } from "./service/apex.service";
 import { ReportService } from "./service/report.service";
 import { AppService } from "./service/app.service";
 import { HttpService } from "./service/http.service";
+import { DataService } from "../common/data.service";
 import { MatSnackBarModule, MatProgressBarModule } from "@angular/material";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
@@ -75,6 +76,7 @@ export class SharedModule {
         ApexService,
         ReportService,
         AppService,
+        DataService,
         HttpService,
         {
           provide: HTTP_INTERCEPTORS,
