@@ -4,7 +4,7 @@
     <mat-toolbar>
       <span> Profile </span>
       <span class="mat-spacer"></span>
-      <button mat-raised-button color="primary" (click)="addItem()">
+      <button mat-raised-button color="primary" (click)="editItem(0)">
         <mat-icon>add</mat-icon>
       </button>
       <button mat-raised-button color="primary" (click)="addFilter()">
@@ -15,7 +15,7 @@
   </head>
   <main class="gap">
 
-    <app-profile-table [inputData]="dataList"> </app-profile-table>
+    <app-profile-table [inputData]="dataList" (outputEmitter)="editItem($event)"> </app-profile-table>
 
   </main>
 </aside>

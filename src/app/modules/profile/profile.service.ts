@@ -18,4 +18,8 @@ export class ProfileService {
   search(filter: any) {
     return this.http.post(this.service_url, { data: filter });
   }
+
+  entityData(id: any) {
+    return this.http.get(this.service_url, { data: { id: id } });
+  }
 }
