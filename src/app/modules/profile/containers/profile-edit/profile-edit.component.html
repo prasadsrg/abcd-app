@@ -14,7 +14,44 @@
     </mat-toolbar>
 
   </head>
-  <main class="gap bg-img" style="background: rgba(255,255,255, 0.8); ">
+  <main class="gap ">
+    <form #myForm="ngForm" novalidate autocomplete='off'>
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+
+        <div fxFlex="100" fxFlex.gt-sm="30" class="padding-half">
+          <mat-card style="height: 200px">
+
+          </mat-card>
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="70" class="padding-half">
+          <mat-card style="height: 200px">
+            <app-profile-details [profile]="profile"></app-profile-details>
+          </mat-card>
+        </div>
+      </div>
+
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+        <div fxFlex="100" fxFlex.gt-sm="50">
+          <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+            <div fxFlex="100" class="padding-half">
+              <mat-card style="height: 150px">
+                <app-profile-active></app-profile-active>
+              </mat-card>
+            </div>
+            <div fxFlex="100" class="padding-half">
+              <mat-card style="height: 150px"> Simple card</mat-card>
+            </div>
+          </div>
+
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="50" class="padding-half">
+          <mat-card style="height: 360px">
+            <app-profile-address [address]="profile.address"></app-profile-address>
+          </mat-card>
+        </div>
+      </div>
+    </form>
 
   </main>
 </aside>
