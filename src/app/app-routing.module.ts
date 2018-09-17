@@ -26,7 +26,15 @@ const routes: Routes = [
     path: "access",
     loadChildren: "./modules/access/access.module#AccessModule",
     // canActivate: [AuthService]
-  }
+  },
+  {
+    path: "consumers",
+    loadChildren: "./modules/consumers/consumers.module#ConsumersModule",
+    canActivate: [AuthService]
+  },
+
+
+
 ];
 
 @NgModule({
