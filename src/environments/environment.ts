@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_END_POINT: "http://qa.dfftech.com:32647"
+  API_END_POINT: "http://qa-abcd-api.dfftech.com"
 };
 
 /*

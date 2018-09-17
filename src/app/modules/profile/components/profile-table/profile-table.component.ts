@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-profile-table",
@@ -8,9 +8,17 @@ import { Component, OnInit, Input } from "@angular/core";
 export class ProfileTableComponent implements OnInit {
   @Input()
   inputData: any[] = [];
+
+  @Output()
+  outputEmitter: EventEmitter<any> = new EventEmitter<any>();
+
   scrollList: any;
 
   constructor() {}
 
   ngOnInit() {}
+
+  editItem(item: any) {
+    this.outputEmitter.emit(item);
+  }
 }

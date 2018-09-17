@@ -52,7 +52,12 @@ export class DataService {
   navigateResetPassword(params: any) {
     this.appService.navigate(Props.MENU.RESET_PASSWORD.link, params);
   }
-
+  navigateProfileEdit(params: any) {
+    this.appService.navigate(Props.MENU.PROFILE_EDIT.link, params);
+  }
+  navigateProfileSearch(params: any) {
+    this.appService.navigate(Props.MENU.PROFILE_SEARCH.link, params);
+  }
   /**
    * load
    */

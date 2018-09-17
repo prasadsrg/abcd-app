@@ -6,7 +6,7 @@ import { ProfileEditComponent } from "./containers/profile-edit/profile-edit.com
 const routes: Routes = [
   { path: "", component: ProfileSearchComponent },
   { path: "search", component: ProfileSearchComponent },
-  { path: "edit", component: ProfileSearchComponent }
+  { path: "edit", component: ProfileEditComponent }
 ];
 
 @NgModule({

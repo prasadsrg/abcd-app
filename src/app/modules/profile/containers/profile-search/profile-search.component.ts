@@ -26,7 +26,13 @@ export class ProfileSearchComponent implements OnInit {
       this.dataList = dataList;
     });
   }
-  addItem() {}
+  editItem(item: any) {
+    if (item) {
+      this.dataService.navigateProfileEdit({ id: item.id });
+    } else {
+      this.dataService.navigateProfileEdit({});
+    }
+  }
   addFilter() {
     this.showNav1 = !this.showNav1;
   }
