@@ -32,6 +32,16 @@ const routes: Routes = [
     loadChildren: "./modules/consumers/consumers.module#ConsumersModule",
     canActivate: [AuthService]
   },
+  {
+    path: "branches",
+    loadChildren: "./modules/branches/branches.module#BranchesModule",
+    canActivate: [AuthService]
+  },
+  {
+    path: "reports",
+    loadChildren: "./modules/reports/reports.module#ReportsModule",
+    canActivate: [AuthService]
+  }
 
 
 
