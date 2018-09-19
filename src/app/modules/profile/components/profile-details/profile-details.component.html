@@ -15,4 +15,20 @@
     </mat-hint>
   </mat-form-field>
 
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="Email" required name="profile_email" [(ngModel)]="profile.email" #profile_email="ngModel"
+      [pattern]="Props.APLPHA_NUMERIC_PATTERN" minlength="8" maxlength="50" type="number">
+    <mat-hint>
+      <form-messages [control]="profile_email.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="Adhar" required name="profile_adhar" [(ngModel)]="profile.adhar" #profile_adhar="ngModel"
+      [pattern]="Props.NUMBER_PATTERN" minlength="16" maxlength="50" type="number">
+    <mat-hint>
+      <form-messages [control]="profile_adhar.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
 </div>

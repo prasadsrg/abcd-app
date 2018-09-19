@@ -2,10 +2,58 @@
 
 
   <mat-form-field fxFlex="100">
-    <input matInput placeholder="lane" name="address_lane" [(ngModel)]="address.lane" #address_lane="ngModel" [pattern]="Props.DATA_PATTERN"
+    <input matInput placeholder="lane" name="address_lane" [(ngModel)]="address.lane" #address_lane="ngModel" 
+    [pattern]="Props.DATA_PATTERN"
       minlength="2" maxlength="50">
     <mat-hint>
       <form-messages [control]="address_lane.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="land mark" name="address_landmark" [(ngModel)]="address.landmark" #address_landmark="ngModel" 
+    [pattern]="Props.DATA_PATTERN"
+      minlength="2" maxlength="50">
+    <mat-hint>
+      <form-messages [control]="address_landmark.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="City" name="address_city" [(ngModel)]="address.city" #address_city="ngModel" 
+    [pattern]="Props.DATA_PATTERN"
+      minlength="2" maxlength="50">
+    <mat-hint>
+      <form-messages [control]="address_city.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="State" name="address_state" [(ngModel)]="address.state" #address_state="ngModel" 
+    [pattern]="Props.DATA_PATTERN"
+      minlength="2" maxlength="50">
+    <mat-hint>
+      <form-messages [control]="address_state.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
+  
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="Country" name="address_country" [(ngModel)]="address.country" #address_country="ngModel" 
+    [pattern]="Props.DATA_PATTERN"
+      minlength="2" maxlength="50">
+    <mat-hint>
+      <form-messages [control]="address_country.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
+    
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="ZipCode" name="address_zipcode" [(ngModel)]="address.zipcode" #address_zipcode="ngModel"
+     [pattern]="Props.NUMBER_PATTERN"
+      minlength="2" maxlength="50">
+    <mat-hint>
+      <form-messages [control]="address_zipcode.control"> </form-messages>
     </mat-hint>
   </mat-form-field>
 

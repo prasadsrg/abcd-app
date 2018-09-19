@@ -4,6 +4,7 @@ export let MENU = {
   SIGN_UP: { name: "Signup", link: "auth/register" },
   FORGOT_PASSWORD: { name: "Forgot Password", link: "auth/forgotpassword" },
   RESET_PASSWORD: { name: "Rest Password", link: "auth/resetpassword" },
+  CONSUMERS: { name: "Cosumers", link: "consumers/consumers" },
   DASHBOARD: { name: "DashBoard", link: "dashboard/dashboard" },
   // MY_PROFILE: { name: "My Profile", link: "profile/myprofile" },
   PROFILE_EDIT: { name: "Profile", link: "profile/edit" },
