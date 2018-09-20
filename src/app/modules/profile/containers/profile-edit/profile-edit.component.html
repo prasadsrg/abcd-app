@@ -36,17 +36,20 @@
           <div fxLayout="row wrap" fxLayoutAlign="space-between center">
             <div fxFlex="100" class="padding-half">
               <mat-card style="height: 150px">
-                <app-profile-active></app-profile-active>
+                <app-profile-active [profile]="profile">
+                </app-profile-active>
               </mat-card>
             </div>
             <div fxFlex="100" class="padding-half">
-              <mat-card style="height: 150px"> Simple card</mat-card>
+              <mat-card style="height: 150px"> 
+                  <app-profile-additional [profile]="profile"></app-profile-additional>
+              </mat-card>
             </div>
           </div>
 
         </div>
         <div fxFlex="100" fxFlex.gt-sm="50" class="padding-half">
-          <mat-card style="height: 360px">
+          <mat-card style="height: 360px" style="text-align:center"> ADDRESS
             <app-profile-address [address]="profile.address"></app-profile-address>
           </mat-card>
         </div>

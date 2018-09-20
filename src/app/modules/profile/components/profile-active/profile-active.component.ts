@@ -14,10 +14,14 @@ import { Profile } from "../../../../entities/profile";
 export class ProfileActiveComponent implements OnInit {
   Props: any = Props;
   
-  constructor() {}
+  constructor() {
+    console.log(this.profile)
+  }
+
+  
 
   @Input()
-  Profile: Profile;
+  profile: Profile;
 
   ngOnInit() {}
 }

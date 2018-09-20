@@ -17,7 +17,7 @@
 
   <mat-form-field fxFlex="100">
     <input matInput placeholder="Email" required name="profile_email" [(ngModel)]="profile.email" #profile_email="ngModel"
-      [pattern]="Props.APLPHA_NUMERIC_PATTERN" minlength="8" maxlength="50" type="number">
+      [pattern]="Props.EMAIL_PATTERN" minlength="8" maxlength="50">
     <mat-hint>
       <form-messages [control]="profile_email.control"> </form-messages>
     </mat-hint>
