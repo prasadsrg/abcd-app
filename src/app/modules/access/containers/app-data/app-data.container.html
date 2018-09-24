@@ -4,16 +4,22 @@
       <mat-toolbar>
         <span> AppData </span>
         <span class="mat-spacer"></span>
-        <button mat-raised-button color="primary">
+        <button mat-raised-button color="primary" (click)="add()">
           <mat-icon>add</mat-icon>
         </button>
-        <button mat-raised-button color="primary">
-          <mat-icon>filter_list</mat-icon>
-        </button>
+        <!-- <button mat-raised-button color="primary" (click)="save()">
+            <mat-icon>save</mat-icon>
+          </button> -->
       </mat-toolbar>
   
     </head>
     <main class="gap bg-img" style="background: rgba(255,255,255, 0.8); ">
-  
-    </main>
+
+              <mat-tab-group  (selectedTabChange)="tabChange($event)">
+                  <mat-tab *ngFor="let item of codes"  label="{{item.val}}" > 
+                      <app-app-data [inputData]="data"></app-app-data>
+                    </mat-tab>
+                </mat-tab-group>
+              <!-- <app-access-menu [roles]="roles"></app-access-menu> -->
+          </main>
   </aside>
