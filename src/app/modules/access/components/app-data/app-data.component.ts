@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input , Output, EventEmitter } from '@angular/core';
 import { Props } from "../../../../common/props";
 import { ControlContainer, NgForm } from "@angular/forms";
 import { AppData } from '../../../../entities/appdata';
@@ -17,12 +17,17 @@ export class AppDataComponent implements OnInit {
 
   Props: any = Props;
   @Input() inputData:any;
+  @Output()
+  outputEmitter: EventEmitter<any> = new EventEmitter<any>();
   constructor() {}
 
   @Input()
   appData: AppData;
   ngOnInit() {
   }
-
+save(item) {
+  console.log(item)
+  this.outputEmitter.emit(item);
+}
 }
 

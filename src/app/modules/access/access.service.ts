@@ -24,4 +24,7 @@ export class AccessService {
   getAppData(code: String) {
     return this.http.post(this.app_data_url, { data: { code: code } });
   }
+  saveAppData(data:any){
+    return this.http.put(this.app_data_url, {  data: data  });
+  }
 }

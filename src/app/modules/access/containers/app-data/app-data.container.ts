@@ -9,35 +9,35 @@ import { AppData } from '../../../../entities/appdata';
   templateUrl: "./app-data.container.html"
 })
 export class AppDataContainer implements OnInit {
-  codes:any=[];
-  data:any=[];
-  appData:any = new AppData();
-  constructor(  private dataService: DataService,
+  codes: any = [];
+  data: any = [];
+  appData: any = new AppData();
+  constructor(private dataService: DataService,
     private accessService: AccessService) {
-      let data='CODE'
-      this.getAccsessData(data)
-    }
+    let data = 'CODE'
+    this.getAccsessData(data)
+  }
 
-  ngOnInit() {}
-  getAccsessData(data){
-    this.dataService.loadAccessData(data).subscribe((data:any)=>{
+  ngOnInit() { }
+  getAccsessData(data) {
+    this.dataService.loadAccessData(data).subscribe((data: any) => {
       this.codes = data;
     })
   }
-  tabChange($event){
-    this.accessService.getAppData($event.tab.textLabel).subscribe((data:any)=>{
+  tabChange($event) {
+    this.accessService.getAppData($event.tab.textLabel).subscribe((data: any) => {
       this.data = data;
     })
-     console.log($event.tab.textLabel)
+    console.log($event.tab.textLabel)
   }
-  add(){
-  
+  add() {
+
     this.data.push(this.appData)
     // console.log(this.data);
   }
-  save(){
-   this.accessService.save(this.data).subscribe((data:any)=>{
+  save($event) {
+    this.accessService.saveAppData($event).subscribe((data: any) => {
       this.accessService.showMessage(data.message)
-   })
+    })
   }
 }
