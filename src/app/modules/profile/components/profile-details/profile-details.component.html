@@ -24,11 +24,11 @@
   </mat-form-field>
 
   <mat-form-field fxFlex="100">
-    <input matInput placeholder="Adhar" required name="profile_adhar" [(ngModel)]="profile.adhar" #profile_adhar="ngModel"
+    <input matInput placeholder="Adhar" required name="profile_adhar" [(ngModel)]="profile.aadhar" #profile_adhar="ngModel"
       [pattern]="Props.NUMBER_PATTERN" minlength="16" maxlength="50" type="number">
     <mat-hint>
       <form-messages [control]="profile_adhar.control"> </form-messages>
-    </mat-hint>
+    </mat-hint>adhar
   </mat-form-field>
 
 </div>

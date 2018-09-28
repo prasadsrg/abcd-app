@@ -9,6 +9,8 @@ import { importType } from '@angular/compiler/src/output/output_ast';
 import { SharedModule } from "../../shared/shared.module";
 import { MaterialModule } from "../../material.module";
 import { AccessService } from './access.service';
+import { AppDataComponent } from './components/app-data/app-data.component';
+import  { AccessMenuComponent } from './components/access-menu/access-menu.component'
 
 @NgModule({
   imports: [
@@ -17,7 +19,7 @@ import { AccessService } from './access.service';
     SharedModule,
     MaterialModule
   ],
-  declarations: [AppDataContainer, AccessMenuContainer],
+  declarations: [AppDataContainer, AccessMenuContainer,AppDataComponent,AccessMenuComponent],
   providers:[AccessService]
 })
 export class AccessModule { }
