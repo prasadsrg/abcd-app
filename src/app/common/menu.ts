@@ -5,7 +5,12 @@ export let MENU = {
   FORGOT_PASSWORD: { name: "Forgot Password", link: "auth/forgotpassword" },
   RESET_PASSWORD: { name: "Rest Password", link: "auth/resetpassword" },
   BRANCHES: { name: "Branches", link: "branches/branches" },
-  CONSUMERS: { name: "Consumers", link: "consumers/consumers" },
+
+  CONSUMERS_EDIT: { name: "Consumers", link: "consumers/edit" },
+
+  CONSUMERS_SEARCH: { name: "Consumers", link: "consumers/search" },
+  CONSUMERS: { name: "Consumers", link: "consumers/search" },
+  
   DASHBOARD: { name: "DashBoard", link: "dashboard/dashboard" },
   // MY_PROFILE: { name: "My Profile", link: "profile/myprofile" },
   PROFILE_EDIT: { name: "Profile", link: "profile/edit" },
