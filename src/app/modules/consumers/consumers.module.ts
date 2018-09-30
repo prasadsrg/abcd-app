@@ -10,6 +10,10 @@ import { ConsumersEditContainer } from './containers/consumers-edit/consumers-ed
 import { ConsumerDetailsComponent } from './components/consumer-details/consumer-details.component';
 import { ConsumerAddressComponent } from './components/consumer-address/consumer-address.component';
 import { ConsumerProofComponent } from './components/consumer-proof/consumer-proof.component';
+import { ConsumerTableComponent } from './components/consumer-table/consumer-table.component';
+import { ConsumerFilterComponent } from './components/consumer-filter/consumer-filter.component';
+import { ConsumerService } from './consumer.service';
+
 
 @NgModule({
   imports: [
@@ -19,7 +23,9 @@ import { ConsumerProofComponent } from './components/consumer-proof/consumer-pro
     SharedModule
   ],
   declarations: [ ConsumersSearchContainer, ConsumersEditContainer,  ConsumerDetailsComponent, ConsumerAddressComponent,
-     ConsumerProofComponent],
-     providers: [   ]
+     ConsumerProofComponent,
+     ConsumerTableComponent,
+     ConsumerFilterComponent],
+     providers: [ ConsumerService ]
 })
 export class ConsumersModule { }
