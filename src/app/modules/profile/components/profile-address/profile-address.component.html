@@ -49,7 +49,7 @@
 
     
   <mat-form-field fxFlex="100">
-    <input matInput placeholder="ZipCode" name="address_zipcode" [(ngModel)]="address.zipcode" #address_zipcode="ngModel"
+    <input matInput placeholder="ZipCode" name="address_zipcode" required name="address_zipcode" [(ngModel)]="address.zipcode" #address_zipcode="ngModel"
      [pattern]="Props.NUMBER_PATTERN"
       minlength="2" maxlength="50">
     <mat-hint>
