@@ -34,6 +34,6 @@ export class ConsumersEditContainer implements OnInit {
     });
   }
   back() {
-    this.dataService;
+    this.dataService.navigateConsumerSearch(null);
   }
 }

@@ -9,6 +9,7 @@ import { Profile } from "../../../../entities/profile";
   styleUrls: ["./profile-edit.component.scss"]
 })
 export class ProfileEditComponent implements OnInit {
+  
   profile: Profile = null;
 
   constructor(
