@@ -6,11 +6,10 @@ infinite-list {
   justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
-  background: rgba(255, 255, 255, 0.1);
+  background: transparent;
 }
 
 table {
-  border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0;
   padding: 0;
@@ -24,8 +23,7 @@ table caption {
   margin: 0.5em 0 0.75em;
 }
 table tr {
-  background: #f8f8f8;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 0.35em;
 }
 table td,

@@ -12,12 +12,12 @@ a {
   font-weight: 600;
 }
 .bg-img {
-  background-image: url(assets/img/bbg.jpg);
+  // background-image: url(assets/img/bbg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #464646;
+  // background-color: #464646;
   height: 100%;
 }
 aside {
@@ -54,7 +54,7 @@ aside {
 #sidenav1 {
   width: 320px;
   margin-top: 95px;
-  background-color: #b0bec5;
+  // background-color: #b0bec5;
   box-shadow: none !important;
 }
 .bg-img {
@@ -81,7 +81,6 @@ aside {
 .margin-one-tb {
   margin: 1em 0em !important;
 }
-
 .padding-one {
   padding: 1em !important;
 }
