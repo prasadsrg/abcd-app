@@ -28,6 +28,8 @@ import {
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ProgressBarComponent } from "./component/progress-bar.component";
 import { ErrorsService } from "./service/errors.service";
+import { AgmCoreModule } from '@agm/core';
+
 
 @NgModule({
   imports: [
@@ -37,7 +39,10 @@ import { ErrorsService } from "./service/errors.service";
     InfiniteScrollModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDJpndR1PgCcaqAdZEnX4wR-wDTXIEAgpU'
+    })
   ],
   declarations: [
     FilterPipe,
@@ -65,7 +70,8 @@ import { ErrorsService } from "./service/errors.service";
     FormMessagesComponent,
     InfiniteScrollModule,
     InfiniteListComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    AgmCoreModule
   ]
 })
 export class SharedModule {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-branches',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./branches.component.scss']
 })
 export class BranchesComponent implements OnInit {
-
+@Input() inputData:any;
+@Output()
+outputEmitter: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {
   }
-
+editItem(item){
+  this.outputEmitter.emit(item);
+}
 }
