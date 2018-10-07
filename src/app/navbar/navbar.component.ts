@@ -104,7 +104,6 @@ export const routerTransition = trigger("routerTransition", [
 
       .sidenav {
         width: 180px;
-        box-shadow: 0 100px 2px 2px #dedee3;
       }
       .mat-list-item {
         height: 35px !important;

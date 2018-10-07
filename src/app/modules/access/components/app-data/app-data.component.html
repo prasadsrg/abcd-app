@@ -1,40 +1,39 @@
-<mat-card fxLayout="row" fxLayoutAlign="space-between center" style="background-color:#D0D8DF;height:56px;font-weight:bold;font-size:14px;text-transform:uppercase">
-        <mat-list-item fxFlex="35">
-          <span>Name</span>
-        </mat-list-item>
-        <mat-list-item fxFlex="35">
-          <span>Code</span>
-        </mat-list-item>
-        <mat-list-item fxFlex="15">
-          <span>Active</span>
-        </mat-list-item>
-        <mat-list-item fxFlex="15">
-                <span>Action</span>
-              </mat-list-item>
-      </mat-card>
-      <ng-template ngFor let-item [ngForOf]="inputData" let-last=last let-index=index >
-            <form #myForm="ngForm" novalidate autocomplete='off' [style.backgroundColor]="index%2? '#fff' : '#f1f5f9'">
+<mat-card fxLayout="row" fxLayoutAlign="space-between center" style="height:56px;text-transform:uppercase">
+  <mat-list-item fxFlex="35">
+    <span>Name</span>
+  </mat-list-item>
+  <mat-list-item fxFlex="35">
+    <span>Code</span>
+  </mat-list-item>
+  <mat-list-item fxFlex="15">
+    <span>Active</span>
+  </mat-list-item>
+  <mat-list-item fxFlex="15">
+    <span>Action</span>
+  </mat-list-item>
+</mat-card>
+<ng-template ngFor let-item [ngForOf]="inputData" let-last=last let-index=index>
+  <form #myForm="ngForm" novalidate autocomplete='off'>
 
-            <mat-list-item fxFlex="35">
-                <mat-form-field fxFlex="90">
-                  <input required matInput [(ngModel)]="item.name"  [ngModelOptions]="{standalone: true}" >
-               </mat-form-field>
-            </mat-list-item>
-            <mat-list-item fxFlex="35">
-              <mat-form-field fxFlex="90">
-                <input   matInput [(ngModel)]="item.code"  [ngModelOptions]="{standalone: true}">
-             </mat-form-field>
-          </mat-list-item>
-            <!-- <mat-list-item fxFlex="35">{{item.priority}}</mat-list-item> -->
-            <mat-list-item fxFlex="15"  fxLayout="row" fxLayoutAlign="start center">
-              <mat-checkbox [(ngModel)]="item.active" [ngModelOptions]="{standalone: true}"></mat-checkbox>
-            </mat-list-item>
-            <mat-list-item fxFlex="15"  fxLayout="row" fxLayoutAlign="start center">
-                    <button mat-raised-button color="primary" (click)="save(item)" style="margin-left: -30px;">
-                            <mat-icon>save</mat-icon>
-                          </button>
-                </mat-list-item>
-           </form>
+    <mat-list-item fxFlex="35">
+      <mat-form-field fxFlex="90">
+        <input required matInput [(ngModel)]="item.name" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item fxFlex="35">
+      <mat-form-field fxFlex="90">
+        <input matInput [(ngModel)]="item.code" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </mat-list-item>
+    <!-- <mat-list-item fxFlex="35">{{item.priority}}</mat-list-item> -->
+    <mat-list-item fxFlex="15" fxLayout="row" fxLayoutAlign="start center">
+      <mat-checkbox [(ngModel)]="item.active" [ngModelOptions]="{standalone: true}"></mat-checkbox>
+    </mat-list-item>
+    <mat-list-item fxFlex="15" fxLayout="row" fxLayoutAlign="start center">
+      <button mat-raised-button color="primary" (click)="save(item)" style="margin-left: -30px;">
+        <mat-icon>save</mat-icon>
+      </button>
+    </mat-list-item>
+  </form>
 
-      </ng-template>
-      
+</ng-template>

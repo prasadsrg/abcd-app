@@ -1,17 +1,22 @@
 <div fxLayout="row wrap">
    
+  <mat-form-field>
+    <mat-select  matInput placeholder="Branch ID" required name="profile_branchid" [(ngModel)]="profile.branchId" #profile_branchid="ngModel">
+    </mat-select>
+  </mat-form-field>
 
-  <mat-form-field fxFlex="100">
+
+  <!-- <mat-form-field fxFlex="100">
     <input matInput placeholder="Branch ID" required name="profile_branchid" [(ngModel)]="profile.branchId" #profile_branchid="ngModel"
       [pattern]="Props.NUMBER_PATTERN" minlength="2" maxlength="15" type="number">
     <mat-hint>
       <form-messages [control]="profile_branchid.control"> </form-messages>
     </mat-hint>
-  </mat-form-field>
+  </mat-form-field> -->
 
   
    
-
+<!-- 
     <mat-form-field fxFlex="100">
       <input matInput placeholder="Role" required name="profile_role" [(ngModel)]="profile.role" #profile_role="ngModel"
         [pattern]="Props.NUMBER_PATTERN" minlength="2" maxlength="15" type="number">
@@ -19,7 +24,11 @@
         <form-messages [control]="profile_role.control"> </form-messages>
       </mat-hint>
     </mat-form-field>
-  
+   -->
 
+   <mat-form-field>
+    <mat-select matInput placeholder="Role" required name="profile_role" [(ngModel)]="profile.role" #profile_role="ngModel">
+    </mat-select>
+  </mat-form-field>
 
 </div>

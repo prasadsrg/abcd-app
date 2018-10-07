@@ -1,0 +1,60 @@
+<aside class="alternative">
+
+    <head>
+      <mat-toolbar>
+        <button mat-raised-button color="primary" (click)="back()">
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+        <span> Consumer Edit </span>
+        <span class="mat-spacer"></span>
+  
+        <button mat-raised-button color="primary">
+          <mat-icon>save</mat-icon>
+        </button>
+      </mat-toolbar>
+  
+    </head>
+    <main class="gap ">
+      <form #myForm="ngForm" novalidate autocomplete='off'>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+  
+          <div fxFlex="100" fxFlex.gt-sm="30" class="padding-half">
+            <mat-card style="height: 200px">
+  
+            </mat-card>
+          </div>
+  
+          <div fxFlex="100" fxFlex.gt-sm="70" class="padding-half">
+            <mat-card style="height: 200px">
+              <app-consumer-details  ></app-consumer-details>
+            </mat-card>
+          </div>
+        </div>
+  
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+          <div fxFlex="100" fxFlex.gt-sm="50">
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+              <div fxFlex="100" class="padding-half">
+                <mat-card style="height: 360px">
+                  <app-consumer-proof  >  </app-consumer-proof>
+                
+                </mat-card>
+              </div>
+              <!-- <div fxFlex="100" class="padding-half">
+                <mat-card style="height: 150px"> 
+                    <app-profile-additional [profile]="profile"></app-profile-additional>
+                </mat-card>
+              </div> -->
+            </div>
+  
+          </div>
+          <div fxFlex="100" fxFlex.gt-sm="50" class="padding-half">
+            <mat-card style="height: 360px" style="text-align:center"> ADDRESS
+              <!-- <app-profile-address [address]="profile.address"></app-profile-address> -->
+            </mat-card>
+          </div>
+        </div>
+      </form>
+  
+    </main>
+  </aside>

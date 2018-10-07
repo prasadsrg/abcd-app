@@ -7,13 +7,13 @@ $mat-primary: mat-palette($mat-blue-grey, 500, 100, 900);
 $mat-accent: mat-palette($mat-amber, 800, 100, 900);
 $mat-warn: mat-palette($mat-red, 800, 100, 900);
 
-$mat-theme: mat-light-theme($mat-primary, $mat-accent, $mat-warn);
+$mat-theme: mat-dark-theme($mat-primary, $mat-accent, $mat-warn);
 @include angular-material-theme($mat-theme);
 
 $alt-primary: mat-palette($mat-blue-grey, 200, 100, 300);
 $alt-accent: mat-palette($mat-orange, 800, 100, 900);
 
-$alt-theme: mat-light-theme($alt-primary, $alt-accent);
+$alt-theme: mat-dark-theme($alt-primary, $alt-accent);
 
 .alternative {
   @include angular-material-theme($alt-theme);
@@ -55,7 +55,6 @@ $custom-typography: mat-typography-config(
 }
 .sidenav {
   width: 180px;
-  box-shadow: 0 100px 2px 2px #dedee3;
 }
 .material-icons {
   vertical-align: middle;
@@ -110,4 +109,7 @@ head {
   top: 24px !important;
   right: 2rem;
   position: absolute !important;
+}
+.mat-form-field {
+  width: 100%;
 }

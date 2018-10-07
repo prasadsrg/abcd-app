@@ -58,6 +58,12 @@ export class DataService {
   navigateProfileSearch(params: any) {
     this.appService.navigate(Props.MENU.PROFILE_SEARCH.link, params);
   }
+  navigateConsumerSearch(params: any) {
+    this.appService.navigate(Props.MENU.CONSUMERS_SEARCH.link, params);
+  }
+  navigateConsumerEdit(params: any) {
+    this.appService.navigate(Props.MENU.CONSUMERS_EDIT.link, params);
+  }
   /**
    * load
    */
