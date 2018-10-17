@@ -16,6 +16,6 @@ export class ProfileService {
   }
 
   entityData(id: any) {
-    return this.http.get(this.service_url, { data: { id: id } });
+    return this.http.get(this.service_url+'/'+id, { });
   }
 }
