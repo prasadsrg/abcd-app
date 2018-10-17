@@ -10,7 +10,8 @@ import { ValidationService } from "../service/validation.service";
   ]
 })
 export class FormMessagesComponent {
-  @Input() control: FormControl;
+  @Input()
+  control: FormControl;
   constructor() {}
 
   get errorMessage() {
