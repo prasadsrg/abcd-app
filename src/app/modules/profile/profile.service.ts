@@ -12,7 +12,7 @@ export class ProfileService {
   constructor(private http: HttpService, private appService: AppService) {}
 
   search(filter: any) {
-    return this.http.post(this.service_url, { data: filter });
+    return this.http.get(this.service_url, { data: filter });
   }
 
   entityData(id: any) {
