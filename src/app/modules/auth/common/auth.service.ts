@@ -8,7 +8,7 @@ import { Props } from "../../../common/props";
 @Injectable()
 export class AuthService {
   private auth_url = "/auth";
-  private access_menu_url = "/access_menu";
+  private access_menu_url = "/accessmenu";
   private forgotPassword_url = "/auth/forgotpassword";
   private resetPassword_url = "/auth/resetpassword";
   constructor(private http: HttpService, private appService: AppService) {}
@@ -62,7 +62,7 @@ export class AuthService {
       setTimeout(() => {
         let role = data.user.role;
         this.http
-          .post(this.access_menu_url, { data: { role: role } })
+          .get(this.access_menu_url, { data: { role: role } })
           .subscribe(respData => {
             Storage.setMenuList(respData);
             this.appService.menuEmit(respData);

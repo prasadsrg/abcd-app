@@ -7,7 +7,7 @@ import { ApexService } from "../shared/service/apex.service";
 
 @Injectable()
 export class DataService {
-  private access_service_url = "/access_data";
+  private access_service_url = "/accessdata";
   private service_url = "/data_load";
 
   constructor(private http: HttpService, private appService: AppService) {}
