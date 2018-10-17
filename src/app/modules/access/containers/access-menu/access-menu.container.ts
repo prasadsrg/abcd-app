@@ -7,33 +7,33 @@ import { AccessService } from "../../access.service";
   templateUrl: "./access-menu.container.html"
 })
 export class AccessMenuContainer implements OnInit {
-  roles:any=[];
-  data:any=[];
+  roles: any = [];
+  data: any = [];
   constructor(
     private dataService: DataService,
     private accessService: AccessService
   ) {
- let data='ROLE'
-    this.getAccsessData(data)
+    let data = "ROLE";
+    this.getAccsessData(data);
   }
 
-  ngOnInit() {
-
-  }
-  getAccsessData(data){
-    this.dataService.loadAccessData(data).subscribe((data:any)=>{
+  ngOnInit() {}
+  getAccsessData(data) {
+    this.dataService.loadAccessData(data).subscribe((data: any) => {
       this.roles = data;
-    })
+    });
   }
-  tabChange($event){
-    this.accessService.getAccessMenu($event.tab.textLabel).subscribe((data:any)=>{
-      this.data = data;
-    })
-     console.log($event.tab.textLabel)
+  tabChange($event) {
+    this.accessService
+      .getAccessMenu($event.tab.textLabel)
+      .subscribe((data: any) => {
+        this.data = data;
+      });
+    console.log($event.tab.textLabel);
   }
-  save(){
-   this.accessService.save(this.data).subscribe((data:any)=>{
-      this.accessService.showMessage(data.message)
-   })
+  save() {
+    this.accessService.saveAccessMenu(this.data).subscribe((data: any) => {
+      this.accessService.showMessage(data.message);
+    });
   }
 }

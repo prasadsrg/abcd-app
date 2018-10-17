@@ -18,13 +18,13 @@ export class AccessService {
   getAccessMenu(code: String) {
     return this.http.post(this.access_menu_url, { data: { role: code } });
   }
-  save(data:any){
-    return this.http.put(this.access_menu_url, {  data: data  });
+  saveAccessMenu(data: any) {
+    return this.http.put(this.access_menu_url, { data: data });
   }
   getAppData(code: String) {
     return this.http.post(this.app_data_url, { data: { code: code } });
   }
-  saveAppData(data:any){
-    return this.http.put(this.app_data_url, {  data: data  });
+  saveAppData(data: any) {
+    return this.http.put(this.app_data_url, { data: data });
   }
 }
