@@ -15,7 +15,7 @@ export class BranchesService {
     this.appService.showMessage(message);
   }
   getbranches(code: String) {
-    return this.http.post(this.branch_url, { data: { name: code } });
+    return this.http.get(this.branch_url, { data: { name: code } });
   }
   save(data:any){
     return this.http.put(this.branch_url, {  data: data  });
