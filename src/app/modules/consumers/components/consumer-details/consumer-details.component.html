@@ -1,3 +1,34 @@
-<p>
-  consumer-details works!
-</p>
+<div fxLayout="row wrap">
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="Name" required name="consumer_name" [(ngModel)]="consumer.name" #consumer_name="ngModel"
+      [pattern]="Props.APLPHA_NUMERIC_PATTERN" minlength="2" maxlength="50">
+    <mat-hint>
+      <form-messages [control]="consumer_name.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="Mobile" required name="consumer_mobile" [(ngModel)]="consumer.mobile" #consumer_mobile="ngModel"
+      [pattern]="Props.NUMBER_PATTERN" minlength="2" maxlength="15" type="number">
+    <mat-hint>
+      <form-messages [control]="consumer_mobile.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="Email" required name="consumer_email" [(ngModel)]="consumer.email" #consumer_email="ngModel"
+      [pattern]="Props.EMAIL_PATTERN" minlength="8" maxlength="50">
+    <mat-hint>
+      <form-messages [control]="consumer_email.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="100">
+    <input matInput placeholder="Adhar" required name="consumer_adhar" [(ngModel)]="consumer.aadhar" #consumer_adhar="ngModel"
+      [pattern]="Props.NUMBER_PATTERN" minlength="16" maxlength="50" type="number">
+    <mat-hint>
+      <form-messages [control]="consumer_adhar.control"> </form-messages>
+    </mat-hint>
+  </mat-form-field>
+
+</div>
