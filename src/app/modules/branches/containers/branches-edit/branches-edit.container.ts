@@ -12,8 +12,9 @@ import { Branch } from '../../../../entities/branch';
 export class BranchesEditContainer implements OnInit {
   branch:Branch = null
   constructor(private branchesService:BranchesService,private appService:AppService) { 
+    this.branch = new Branch();
     if(this.appService.getParam('id')){
-  this.getBranchData(this.appService.getParam('id'))
+      this.getBranchData(this.appService.getParam('id'))
     }
   }
 
@@ -29,7 +30,7 @@ export class BranchesEditContainer implements OnInit {
     })
   }
 getBranchData(data){
-  this.branchesService.getSingleBranch(data).subscribe((data: any) => {
+  this.branchesService.entity(data).subscribe((data: any) => {
     // this.branchesService.showMessage(data.message)
   this.branch = data;
   })

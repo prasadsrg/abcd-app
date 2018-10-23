@@ -4,14 +4,29 @@
 @include mat-core();
 
 $mat-primary: mat-palette($mat-blue-grey, 500, 100, 900);
-$mat-accent: mat-palette($mat-amber, 800, 100, 900);
-$mat-warn: mat-palette($mat-red, 800, 100, 900);
+$mat-accent: mat-palette($mat-amber, 500, 100, 900);
+$mat-warn: mat-palette($mat-red, 500, 100, 900);
+$background-color: map_get($mat-blue-grey, 900);
 
 $mat-theme: mat-dark-theme($mat-primary, $mat-accent, $mat-warn);
+$background: map-get($mat-theme, background);
+$background: map_merge(
+  $background,
+  (
+    background: $background-color
+  )
+);
+$theme: map_merge(
+  $mat-theme,
+  (
+    background: $background
+  )
+);
+
 @include angular-material-theme($mat-theme);
 
-$alt-primary: mat-palette($mat-blue-grey, 200, 100, 300);
-$alt-accent: mat-palette($mat-orange, 800, 100, 900);
+$alt-primary: mat-palette($mat-blue-grey, 300, 100, 300);
+$alt-accent: mat-palette($mat-blue, 500, 100, 900);
 
 $alt-theme: mat-dark-theme($alt-primary, $alt-accent);
 

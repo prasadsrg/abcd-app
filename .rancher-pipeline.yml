@@ -1,0 +1,14 @@
+stages:
+- name: docker build and push
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: eu2itteam/abcd-app
+      pushRemote: true
+      registry: index.docker.io
+- name: docker download
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+timeout: 60
