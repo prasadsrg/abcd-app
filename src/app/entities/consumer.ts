@@ -7,5 +7,6 @@ export class Consumer {
     aadhar:any;
     address:Address =  new Address();
     active:boolean = true;
-    grpcode:any;
+    vid:any;
 }
+

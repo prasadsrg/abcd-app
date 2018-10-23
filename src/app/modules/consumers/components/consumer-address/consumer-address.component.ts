@@ -14,6 +14,7 @@ import { ControlContainer, NgForm } from "@angular/forms";
 export class ConsumerAddressComponent implements OnInit {
 
   Props: any = Props;
+  
   @Input()
   address: Address;
 
