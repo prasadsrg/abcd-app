@@ -4,15 +4,12 @@ import { ConsumerService } from "../../consumer.service";
 
 import { Consumer } from "../../../../entities/consumer";
 
-
 @Component({
   selector: "app-consumers-edit",
   templateUrl: "./consumers-edit.container.html"
 })
-
 export class ConsumersEditContainer implements OnInit {
-
-  consumer : Consumer = null;
+  consumer: Consumer = null;
 
   constructor(
     private dataService: DataService,
@@ -35,5 +32,11 @@ export class ConsumersEditContainer implements OnInit {
   }
   back() {
     this.dataService.navigateConsumerSearch(null);
+  }
+
+  save() {
+    this.cosumerService.save(this.consumer).subscribe((data: any) => {
+      this.consumer = data;
+    });
   }
 }
