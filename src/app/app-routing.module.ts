@@ -41,6 +41,11 @@ const routes: Routes = [
     path: "reports",
     loadChildren: "./modules/reports/reports.module#ReportsModule",
     canActivate: [AuthService]
+  },
+  {
+    path: "settings",
+    loadChildren: "./modules/settings/settings.module#SettingsModule",
+    canActivate: [AuthService]
   }
 
 

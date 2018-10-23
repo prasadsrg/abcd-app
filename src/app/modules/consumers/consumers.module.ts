@@ -15,6 +15,8 @@ import { ConsumerFilterComponent } from './components/consumer-filter/consumer-f
 import { ConsumerService } from './consumer.service';
 
 
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -25,7 +27,7 @@ import { ConsumerService } from './consumer.service';
   declarations: [ ConsumersSearchContainer, ConsumersEditContainer,  ConsumerDetailsComponent, ConsumerAddressComponent,
      ConsumerProofComponent,
      ConsumerTableComponent,
-     ConsumerFilterComponent],
+     ConsumerFilterComponent ],
      providers: [ ConsumerService ]
 })
 export class ConsumersModule { }

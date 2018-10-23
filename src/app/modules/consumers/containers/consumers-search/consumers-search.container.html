@@ -1,25 +1,25 @@
 <aside class="alternative">
 
-  <head>
-    <mat-toolbar>
-      <span> Consumers </span>
-      <span class="mat-spacer"></span>
-      <button mat-raised-button color="primary" (click)="editItem(null)">
-        <mat-icon>add</mat-icon>
-      </button>
-      <button mat-raised-button color="primary" (click)="addFilter()">
-        <mat-icon>filter_list</mat-icon>
-      </button>
-    </mat-toolbar>
-
-  </head>
-  <main class="gap">
-
-    <!-- <app-consumer-tabel [inputData]="dataList" (outputEmitter)="editItem($event)"> </app-consumer-tabel> -->
-
-  </main>
-</aside>
-
-<mat-sidenav id="sidenav1" position="end" mode="over " [opened]="showNav1">
-  <!-- <app-profile-filter [(inputData)]="filterInput" (outputEmitter)="filterClose($event)"></app-profile-filter> -->
-</mat-sidenav>
+    <head>
+      <mat-toolbar>
+        <span> Consumers </span>
+        <span class="mat-spacer"></span>
+        <button mat-raised-button color="primary" (click)="editItem(null)">
+          <mat-icon>add</mat-icon>
+        </button>
+        <button mat-raised-button color="primary" (click)="addFilter()">
+          <mat-icon>filter_list</mat-icon>
+        </button>
+      </mat-toolbar>
+  
+    </head>
+    <main class="gap">
+  
+      <app-consumer-table [(inputData)]="dataList" (outputEmitter)="editItem($event)"> </app-consumer-table>
+  
+    </main>
+  </aside>
+  
+  <mat-sidenav id="sidenav1" position="end" mode="over " [opened]="showNav1">
+    <app-consumer-filter [(inputData)]="filterInput" (outputEmitter)="filterClose($event)"></app-consumer-filter>
+  </mat-sidenav>

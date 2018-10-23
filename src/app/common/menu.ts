@@ -17,7 +17,7 @@ export let MENU = {
   PROFILE_SEARCH: { name: "Profiles", link: "profile/search" },
   PROFILES: { name: "Profiles", link: "profile/search" },
   REPORTS: { name: "Reports", link: "reports/reports" },
-
+  SETTINGS: { name: "Settings", link: "settings/settings"},
   // DASH_BOARD: { name: "DashBoard", link: "dashboard/dashboard" },
   APP_DATA: { name: "App Data", link: "access/appdata" },
   ACCESS_MENU: { name: "Access Menu", link: "access/access_menu" },
