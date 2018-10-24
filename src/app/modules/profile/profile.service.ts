@@ -16,6 +16,12 @@ export class ProfileService {
   }
 
   entityData(id: any) {
-    return this.http.get(this.service_url+'/'+id, { });
+    return this.http.get(this.service_url + "/" + id, {});
+  }
+  saveProfileData(data: any) {
+    return this.http.put(this.service_url, { data: data });
+  }
+  showMessage(message: string) {
+    this.appService.showMessage(message);
   }
 }
