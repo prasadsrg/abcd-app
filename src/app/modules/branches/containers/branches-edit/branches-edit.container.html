@@ -1,22 +1,26 @@
-
-
 <aside class="alternative">
-    
-      <head>
-        <mat-toolbar>
-          <button mat-raised-button color="primary" (click)="back()">
-            <mat-icon>arrow_back_ios</mat-icon>
-          </button>
-          <span> Branch </span>
-          <span class="mat-spacer"></span>
-    
-          <button mat-raised-button color="primary" (click)="save()">
-            <mat-icon>save</mat-icon>
-          </button>
-        </mat-toolbar>
-    
-      </head>
-      <main class="gap ">
-            <app-branches-edit [branch]="branch"></app-branches-edit>
-          </main>
-          </aside>
+
+  <head>
+    <mat-toolbar>
+      <button mat-raised-button color="primary" (click)="back()">
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <span> Branch </span>
+      <span class="mat-spacer"></span>
+
+      <button mat-raised-button color="primary" (click)="save()">
+        <mat-icon>save</mat-icon>
+      </button>
+    </mat-toolbar>
+
+  </head>
+  <main class="gap ">
+
+    <app-branches-details [branch]="branch"></app-branches-details>
+
+    <app-branches-address [address]="branch.address"></app-branches-address>
+
+    <app-branches-edit [branch]="branch"></app-branches-edit>
+
+  </main>
+</aside>

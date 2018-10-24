@@ -64,6 +64,12 @@ export class DataService {
   navigateConsumerEdit(params: any) {
     this.appService.navigate(Props.MENU.CONSUMERS_EDIT.link, params);
   }
+  navigateBranchSearch(params:any){
+    this.appService.navigate(Props.MENU.BRANCHES_SEARCH.link, params);
+  }
+  navigateBranchEdit(params:any){
+    this.appService.navigate(Props.MENU.BRANCHES_EDIT.link, params);
+  }
   /**
    * load
    */
