@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DataService } from "../../../../common/data.service";
 import { ProfileService } from "../../profile.service";
 import { Profile } from "../../../../entities/profile";
+// import { AccessService } from "../../../access/access.service";
 
 @Component({
   selector: "app-profile-edit",
@@ -9,7 +10,6 @@ import { Profile } from "../../../../entities/profile";
   styleUrls: ["./profile-edit.component.scss"]
 })
 export class ProfileEditComponent implements OnInit {
-  
   profile: Profile = null;
 
   constructor(
@@ -33,5 +33,17 @@ export class ProfileEditComponent implements OnInit {
   }
   back() {
     this.dataService.navigateProfileSearch(null);
+  }
+
+  // save($event) {
+  //   this.profileService.saveProfileData($event).subscribe((data: any) => {
+  //     this.dataService.showMessage(data.message);
+  //   });
+  // }
+
+  save() {
+    this.profileService.saveProfileData(this.profile).subscribe((data: any) => {
+      this.profileService.showMessage(data.message);
+    });
   }
 }

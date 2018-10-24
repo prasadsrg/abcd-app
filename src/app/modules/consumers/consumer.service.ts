@@ -23,4 +23,7 @@ export class ConsumerService {
   save(data: any) {
     return this.http.put(this.service_url, { data: data });
   }
+  showMessage(message: string) {
+    this.appService.showMessage(message);
+  }
 }

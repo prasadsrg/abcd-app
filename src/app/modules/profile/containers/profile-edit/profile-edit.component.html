@@ -8,7 +8,7 @@
       <span> Profile </span>
       <span class="mat-spacer"></span>
 
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" (click)="save()">
         <mat-icon>save</mat-icon>
       </button>
     </mat-toolbar>
@@ -41,8 +41,8 @@
               </mat-card>
             </div>
             <div fxFlex="100" class="padding-half">
-              <mat-card style="height: 150px"> 
-                  <app-profile-additional [profile]="profile"></app-profile-additional>
+              <mat-card style="height: 150px">
+                <app-profile-additional [profile]="profile"></app-profile-additional>
               </mat-card>
             </div>
           </div>

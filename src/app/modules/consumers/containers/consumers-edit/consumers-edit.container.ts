@@ -36,7 +36,8 @@ export class ConsumersEditContainer implements OnInit {
 
   save() {
     this.cosumerService.save(this.consumer).subscribe((data: any) => {
-      this.consumer = data;
+      // this.consumer = data;
+      this.cosumerService.showMessage(data.message);
     });
   }
 }
