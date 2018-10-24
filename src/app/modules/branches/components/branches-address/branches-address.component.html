@@ -1,0 +1,54 @@
+<div class="padding">
+    <div fxLayout="row wrap" fxLayoutAlign="start center">
+        <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="100">
+            <mat-card>
+                <mat-card-content>
+                    <div fxLayout="row wrap" fxLayoutAlign="start start">
+                        <h5 fxFlex="100" style="text-align: left;">Address Details</h5>
+                        <div fxLayout="row wrap" fxFlex="100 ">
+                            <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                                <input matInput placeholder="Latitude" required [(ngModel)]="address.lat" readonly>
+                                <!-- <mat-hint>
+                                  <form-messages > </form-messages>
+                              </mat-hint> -->
+                            </mat-form-field>
+                            <mat-form-field fxFlex="30" fxFlex.sm="45" fxFlex.xs="100" class="margin8">
+                                <input matInput placeholder="Longitude" required [(ngModel)]="address.lng" readonly>
+                                <!-- <mat-hint>
+                                  <form-messages > </form-messages>
+                              </mat-hint> -->
+                            </mat-form-field>
+
+                            <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                                <input matInput type="text" placeholder="city" required [(ngModel)]="address.city">
+                                <!-- <mat-hint>
+                                  <form-messages> </form-messages>
+                              </mat-hint> -->
+                            </mat-form-field>
+                            <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                                <input matInput placeholder="state" required [(ngModel)]="address.state">
+                                <!-- <mat-hint>
+                                  <form-messages > </form-messages>
+                              </mat-hint> -->
+                            </mat-form-field>
+
+                            <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                                <input matInput type="text" placeholder="country" required [(ngModel)]="address.country">
+                                <!-- <mat-hint>
+                                  <form-messages > </form-messages>
+                              </mat-hint> -->
+                            </mat-form-field>
+                            <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                                <input matInput placeholder="zipcode" required [(ngModel)]="address.zipcode">
+                                <!-- <mat-hint>
+                                  <form-messages > </form-messages>
+                              </mat-hint> -->
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

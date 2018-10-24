@@ -1,0 +1,21 @@
+<aside class="alternative">
+
+  <head>
+    <mat-toolbar>
+      <span> Branches </span>
+      <span class="mat-spacer"></span>
+      <button mat-raised-button color="primary" (click)="editItem(0)">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-raised-button color="primary">
+        <mat-icon>filter_list</mat-icon>
+      </button>
+    </mat-toolbar>
+
+  </head>
+  <main class="gap">
+
+    <app-branches [inputData]="dataList" (outputEmitter)="editItem($event)"> </app-branches>
+
+  </main>
+</aside>

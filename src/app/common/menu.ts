@@ -4,7 +4,13 @@ export let MENU = {
   SIGN_UP: { name: "Signup", link: "auth/register" },
   FORGOT_PASSWORD: { name: "Forgot Password", link: "auth/forgotpassword" },
   RESET_PASSWORD: { name: "Rest Password", link: "auth/resetpassword" },
-  BRANCHES: { name: "Branches", link: "branches/branches" },
+  BRANCHES: { name: "Branches", link: "branches/search" },
+  
+  BRANCHES_SEARCH: { name: "Branches", link: "branches/search" },
+
+  BRANCHES_EDIT: { name: "Branches", link: "branches/edit" },
+
+  
 
   CONSUMERS_EDIT: { name: "Consumers", link: "consumers/edit" },
 

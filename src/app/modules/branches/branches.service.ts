@@ -20,7 +20,7 @@ export class BranchesService {
   save(data:any){
     return this.http.put(this.branch_url, {  data: data  });
   }
-entity(id){
-  return this.http.get(this.branch_url+'/'+id, null);
+entityData(id:any){
+  return this.http.get(this.branch_url+'/'+id, {});
 }
 }

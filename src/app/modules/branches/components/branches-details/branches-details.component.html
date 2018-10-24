@@ -1,0 +1,51 @@
+<div fxLayout="column" fxLayoutAlign="space-between center" >
+  <div class="padding">
+      <mat-card>
+          <mat-card-content>
+              <div fxLayout="row wrap" fxLayoutAlign="start center">
+                  <h5 fxFlex="100" >Personal Details</h5>
+
+                  <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                      <input matInput placeholder="Name" required [(ngModel)]="branch.name">
+                      <!-- <mat-hint>
+                          <form-messages> </form-messages>
+                      </mat-hint> -->
+                  </mat-form-field>
+                  <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                      <input matInput type="text" placeholder="Email" required  [(ngModel)]="branch.email">
+                      <!-- <mat-hint>
+                          <form-messages > </form-messages>
+                      </mat-hint> -->
+                  </mat-form-field>
+                  <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                      <input matInput placeholder="Mobile" required [(ngModel)]="branch.mobile">
+                      <!-- <mat-hint>
+                          <form-messages > </form-messages>
+                      </mat-hint> -->
+                  </mat-form-field>
+                  <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                      <input matInput type="text" placeholder="Pan " required  [(ngModel)]="branch.pan">
+                      <!-- <mat-hint>
+                          <form-messages > </form-messages>
+                      </mat-hint> -->
+                  </mat-form-field>
+                  <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                      <input matInput type="text" placeholder="Tan " required [(ngModel)]="branch.tan">
+                      <!-- <mat-hint>
+                          <form-messages > </form-messages>
+                      </mat-hint> -->
+                  </mat-form-field>
+                  <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                      <input matInput type="text" placeholder="Gstin " required  [(ngModel)]="branch.gstin">
+                      <!-- <mat-hint>
+                          <form-messages > </form-messages>
+                      </mat-hint> -->
+                  </mat-form-field>
+                  <mat-checkbox fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" fxLayoutAlign="start start" [(ngModel)]="branch.active" [ngModelOptions]="{standalone: true}">Active</mat-checkbox>
+                  <mat-checkbox fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" fxLayoutAlign="start start" [(ngModel)]="branch.isMain" [ngModelOptions]="{standalone: true}">Main Branch</mat-checkbox>
+              </div>
+              
+          </mat-card-content>
+      </mat-card>
+  </div>
+</div>
