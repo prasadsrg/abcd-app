@@ -9,6 +9,10 @@ import { DataService } from "../../../../common/data.service";
 export class BranchesSearchContainer implements OnInit {
   name: any = "abcd";
   dataList: any = [];
+  filter: any = {};
+  filterInput: any = {};
+  showNav1: boolean = false;
+
   constructor(
     private branchesService: BranchesService,
     private DataService: DataService
@@ -27,6 +31,18 @@ export class BranchesSearchContainer implements OnInit {
       this.DataService.navigateBranchEdit({ id: $event.id });
     } else {
       this.DataService.navigateBranchEdit(null);
+    }
+  }
+  addFilter() {
+    this.showNav1 = !this.showNav1;
+  }
+
+  filterClose($event: any) {
+    this.showNav1 = false;
+    if ($event == true) {
+      this.filter = Object.assign({}, this.filterInput);
+    } else {
+      this.filterInput = Object.assign({}, this.filter);
     }
   }
 }

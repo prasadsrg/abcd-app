@@ -14,7 +14,4 @@ export class Branch {
   address: Address = new Address();
   isMain: boolean = false;
   active: boolean = true;
-  grpcode: string;
-  updatedBy: string = "system";
-  updatedOn: Date;
 }

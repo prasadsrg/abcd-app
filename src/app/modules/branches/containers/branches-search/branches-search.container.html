@@ -4,10 +4,10 @@
     <mat-toolbar>
       <span> Branches </span>
       <span class="mat-spacer"></span>
-      <button mat-raised-button color="primary" (click)="editItem(0)">
+      <button mat-raised-button color="primary" (click)="editItem(null)">
         <mat-icon>add</mat-icon>
       </button>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" (click)="addFilter()">
         <mat-icon>filter_list</mat-icon>
       </button>
     </mat-toolbar>
@@ -19,3 +19,7 @@
 
   </main>
 </aside>
+
+<mat-sidenav id="sidenav1" position="end" mode="over " [opened]="showNav1">
+  <app-branches-filter [(inputData)]="filterInput" (outputEmitter)="filterClose($event)"></app-branches-filter>
+</mat-sidenav>

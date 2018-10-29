@@ -7,9 +7,12 @@ import { ApexService } from "../../shared/service/apex.service";
 
 @Injectable()
 export class BranchesService {
-
   private branch_url = "/branch";
   constructor(private http: HttpService, private appService: AppService) {}
+
+  search(filter: any) {
+    return this.http.get(this.branch_url, { data: filter });
+  }
 
   showMessage(message: string) {
     this.appService.showMessage(message);
@@ -17,10 +20,10 @@ export class BranchesService {
   getbranches(code: String) {
     return this.http.get(this.branch_url, { data: { name: code } });
   }
-  save(data:any){
-    return this.http.put(this.branch_url, {  data: data  });
+  save(data: any) {
+    return this.http.put(this.branch_url, { data: data });
   }
-entityData(id:any){
-  return this.http.get(this.branch_url+'/'+id, {});
-}
+  entityData(id: any) {
+    return this.http.get(this.branch_url + "/" + id, {});
+  }
 }
