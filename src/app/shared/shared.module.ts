@@ -11,6 +11,7 @@ import { HttpService } from "./service/http.service";
 import { DataService } from "../common/data.service";
 import { MatSnackBarModule, MatProgressBarModule } from "@angular/material";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { ScrollDispatchModule } from "@angular/cdk/scrolling";
 
 import { FormMessagesComponent } from "./component/form.messages.component";
 import { InfiniteListComponent } from "./component/infinite.list.component";
@@ -28,8 +29,7 @@ import {
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ProgressBarComponent } from "./component/progress-bar.component";
 import { ErrorsService } from "./service/errors.service";
-import { AgmCoreModule } from '@agm/core';
-
+import { AgmCoreModule } from "@agm/core";
 
 @NgModule({
   imports: [
@@ -40,8 +40,9 @@ import { AgmCoreModule } from '@agm/core';
     HttpClientModule,
     MatSnackBarModule,
     MatProgressBarModule,
+    ScrollDispatchModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDJpndR1PgCcaqAdZEnX4wR-wDTXIEAgpU'
+      apiKey: "AIzaSyDJpndR1PgCcaqAdZEnX4wR-wDTXIEAgpU"
     })
   ],
   declarations: [
@@ -68,6 +69,7 @@ import { AgmCoreModule } from '@agm/core';
     FlagPipe,
     CurrencyPipe,
     FormMessagesComponent,
+    ScrollDispatchModule,
     InfiniteScrollModule,
     InfiniteListComponent,
     ProgressBarComponent,

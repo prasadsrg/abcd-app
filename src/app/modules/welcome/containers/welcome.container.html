@@ -14,7 +14,11 @@
 
   </head>
   <main class="gap bg-img">
-    <app-welcome-news></app-welcome-news>
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+      <app-welcome-news>
+      </app-welcome-news>
+    </div>
+
     <button mat-fab color="accent" class="fab-bottom-right" (click)="login()">
       <mat-icon>inputs</mat-icon>
     </button>

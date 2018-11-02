@@ -49,6 +49,20 @@ export const routerTransition = trigger("routerTransition", [
 @Component({
   selector: "navbar",
   template: `
+  <mat-toolbar color="primary"  *ngIf="sessionUser" style="postion: releative">
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      style="float: right"
+      (click)="drawer.toggle()"
+      *ngIf="(isHandset | async)!.matches"   
+      >
+      <mat-icon aria-label="Side nav toggle icon" >menu</mat-icon>
+    </button>
+    <span style="font-weight: 500">{{title}}</span>
+
+  </mat-toolbar>
     <mat-sidenav-container class="sidenav-container" >
       <mat-sidenav 
         #drawer
@@ -73,19 +87,6 @@ export const routerTransition = trigger("routerTransition", [
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content style="overflow: hidden !important;">
-        <mat-toolbar color="primary" *ngIf="sessionUser">
-          <button
-            type="button"
-            aria-label="Toggle sidenav"
-            mat-icon-button
-            style="float: right"
-            (click)="drawer.toggle()"
-            *ngIf="(isHandset | async)!.matches">
-            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-          </button>
-          <span style="font-weight: 500">{{title}}</span>
-
-        </mat-toolbar>
         <span [@routerTransition]="o.isActivated ? o.activatedRoute : ''">
           <router-outlet #o="outlet"></router-outlet>
         </span>
@@ -104,6 +105,7 @@ export const routerTransition = trigger("routerTransition", [
 
       .sidenav {
         width: 180px;
+        top: 48px !important;
       }
       .mat-list-item {
         height: 35px !important;
